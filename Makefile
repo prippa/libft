@@ -10,15 +10,17 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	libft.a
+NAME		=	libft.a
 
-FLAGS	=	-Wall -Werror -Wextra
+CC			=	gcc -Wall -Werror -Wextra
 
-CC		=	gcc $(FLAGS)
+INC_PATH	=	./includes/
+SRC_PATH	=	./source/
+OBJ_PATH 	= 	./obj/
 
-I_PATH	=	libft.h get_next_line.h
+HEAD_NAME	=	libft.h get_next_line.h
 
-SRC		= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
+SRC_NAME	= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
 			ft_isascii.c ft_isdigit.c ft_islowercase.c ft_isprint.c ft_isspace.c\
 			ft_isstralpha.c ft_isstrdigit.c ft_isstrlowercase.c ft_isstruppercase.c\
 			ft_isuppercase.c ft_itoa.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c\
@@ -34,10 +36,14 @@ SRC		= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
 			ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c\
 			ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c\
 			ft_strtrim.c ft_tolower.c ft_tostrlowercase.c ft_tostruppercase.c\
-			ft_toupper.c get_next_line.c
+			ft_toupper.c\
+			get_next_line.c
 
-OBJ	=	$(SRC:.c=.o)
-INC = 	$(addprefix -I,$(I_PATH))
+OBJ_NAME 	= 	$(SRC_NAME:.c=.o)
+
+OBJ 		= 	$(addprefix $(OBJ_PATH),$(OBJ_NAME))
+INC_I 		= 	$(addprefix -I,$(INC_PATH))
+INC_H 		= 	$(addprefix $(INC_PATH),$(HEAD_NAME))
 
 all: $(NAME)
 
@@ -46,17 +52,18 @@ $(NAME): $(OBJ)
 	@ranlib $@
 	@echo "Compiling" [ $(NAME) ]
 
-%.o: %.c $(I_PATH)
-	@$(CC) -c -o $@ $< $(INC)
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INC_H)
+	@mkdir -p $(OBJ_PATH)
+	@$(CC) $(INC_I) -c -o $@ $< 
 	@echo "Linking" [ $< ]
 
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_PATH)
 	@echo "Cleaning .o files"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "Remove" [ $(NAME) ]
+	@echo "Clean" [ $(NAME) ]
 
 re: fclean all
 
