@@ -15,7 +15,7 @@ NAME		=	libft.a
 CC			=	gcc -Wall -Werror -Wextra
 
 INC_PATH	=	./includes/
-SRC_PATH	=	./source/
+SRC_PATH	=	./libc/
 OBJ_PATH 	= 	./obj/
 
 HEAD_NAME	=	libft.h get_next_line.h
