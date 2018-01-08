@@ -68,7 +68,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
-char				*ft_itoa(int n);
+char				*ft_itoa(long long int n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
@@ -94,5 +94,7 @@ int					ft_isstruppercase(const char *str);
 int					ft_isstrlowercase(const char *str);
 char				*ft_tostrlowercase(const char *str);
 char				*ft_tostruppercase(const char *str);
+char				*ft_itoa_base(unsigned long long int num,
+					int base, int letter);
 
 #endif
