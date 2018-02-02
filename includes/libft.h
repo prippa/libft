@@ -96,5 +96,8 @@ char				*ft_tostrlowercase(const char *str);
 char				*ft_tostruppercase(const char *str);
 char				*ft_itoa_base(unsigned long long int num,
 					int base, int letter);
+size_t				ft_arrlen(char **arr);
+void				ft_arr_free(char ***arr);
+int					ft_nbrlen(long long int nb);
 
 #endif

@@ -10,21 +10,21 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	libftprintf.a
+NAME		=	libft.a
 
 FLAGS		= 	-Wall -Werror -Wextra
 
 CC			=	gcc
 
 DIR_INC		=	./includes/
-DIR_LIBFT	=	./libft/
+DIR_LIBC	=	./libc/
 DIR_FPF		=	./printf/
 DIR_OBJ		= 	./obj/
 
-HEAD_LIBFT	=	libft.h get_next_line.h
+HEAD_LIBC	=	libft.h get_next_line.h
 HEAD_FPF	=	ft_printf.h
 
-C_LIBFT		= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
+C_LIBC		= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
 			ft_isascii.c ft_isdigit.c ft_islowercase.c ft_isprint.c ft_isspace.c\
 			ft_isstralpha.c ft_isstrdigit.c ft_isstrlowercase.c ft_isstruppercase.c\
 			ft_isuppercase.c ft_itoa.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c\
@@ -40,7 +40,8 @@ C_LIBFT		= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
 			ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c\
 			ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c\
 			ft_strtrim.c ft_tolower.c ft_tostrlowercase.c ft_tostruppercase.c\
-			ft_toupper.c ft_itoa_base.c get_next_line.c
+			ft_toupper.c ft_itoa_base.c get_next_line.c\
+			ft_arr_free.c ft_arrlen.c ft_nbrlen.c
 
 C_FPF		= 	ft_pf_strjoin.c ft_charjoin.c\
 				ft_printf.c ft_unicode.c ft_conv_sig_int.c ft_conv_unsig_int.c\
@@ -52,14 +53,14 @@ C_FPF		= 	ft_pf_strjoin.c ft_charjoin.c\
 
 
 
-OBJ_LIBFT 	= 	$(C_LIBFT:.c=.o)
+OBJ_LIBC 	= 	$(C_LIBC:.c=.o)
 OBJ_FPF 	= 	$(C_FPF:.c=.o)
 
-OBJ 		= 	$(addprefix $(DIR_OBJ),$(OBJ_LIBFT))
+OBJ 		= 	$(addprefix $(DIR_OBJ),$(OBJ_LIBC))
 OBJ 		+= 	$(addprefix $(DIR_OBJ),$(OBJ_FPF))
 
 INC 		= 	$(addprefix -I,$(DIR_INC))
-INC_LIBFT 	= 	$(addprefix $(DIR_INC),$(HEAD_LIBFT))
+INC_LIBC 	= 	$(addprefix $(DIR_INC),$(HEAD_LIBC))
 INC_FPF 	= 	$(addprefix $(DIR_INC),$(HEAD_FPF))
 
 
@@ -71,7 +72,7 @@ $(NAME): $(OBJ)
 	@ranlib $(NAME)
 	@echo "Compiling" [ $(NAME) ]
 
-$(DIR_OBJ)%.o: $(DIR_LIBFT)%.c $(INC_LIBFT)
+$(DIR_OBJ)%.o: $(DIR_LIBC)%.c $(INC_LIBC)
 	@mkdir -p $(DIR_OBJ)
 	@$(CC) $(FLAGS) $(INC) -c -o $@ $<
 	@echo "Linking" [ $< ]
@@ -83,7 +84,7 @@ $(DIR_OBJ)%.o: $(DIR_FPF)%.c $(INC_FPF)
 
 clean:
 	@rm -rf $(DIR_OBJ)
-	@echo "Cleaning .o files"
+	@echo "Clean [obj files]"
 
 fclean: clean
 	@rm -f $(NAME)
