@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-void	ft_putarr_fd(int fd, char **arr)
+void	ft_putarr_fd(char **arr, int fd)
 {
 	int i;
 
 	i = 0;
 	while (arr[i])
 	{
-		ft_putendl_fd(fd, arr[i]);
+		ft_putendl_fd(arr[i], fd);
 		i++;
 	}
 }
