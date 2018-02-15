@@ -49,7 +49,8 @@ C_FPF		= 	ft_pf_strjoin.c ft_charjoin.c\
 				ft_get_oux.c ft_get_di.c ft_get_c.c ft_get_s.c\
 				ft_output_c_modul.c ft_output_s_modul.c ft_output_d_modul.c\
 				ft_output_u_modul.c ft_output_ox_modul.c\
-				ft_output_p_modul.c
+				ft_output_p_modul.c\
+				ft_fpf_color.c
 
 
 
