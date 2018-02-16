@@ -101,5 +101,6 @@ void				ft_arr_free(char ***arr);
 int					ft_nbrlen(long long int nb);
 void				ft_putarr(char **arr);
 void				ft_putarr_fd(char **arr, int fd);
+int					ft_atoi_base(const char *str, int base);
 
 #endif

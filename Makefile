@@ -41,7 +41,7 @@ C_LIBC		= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
 			ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c\
 			ft_strtrim.c ft_tolower.c ft_tostrlowercase.c ft_tostruppercase.c\
 			ft_toupper.c ft_itoa_base.c get_next_line.c\
-			ft_arr_free.c ft_arrlen.c ft_nbrlen.c
+			ft_arr_free.c ft_arrlen.c ft_nbrlen.c ft_atoi_base.c
 
 C_FPF		= 	ft_pf_strjoin.c ft_charjoin.c\
 				ft_printf.c ft_unicode.c ft_conv_sig_int.c ft_conv_unsig_int.c\
