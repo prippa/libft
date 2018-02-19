@@ -21,7 +21,7 @@ DIR_LIBC	=	./libc/
 DIR_FPF		=	./printf/
 DIR_OBJ		= 	./obj/
 
-HEAD_LIBC	=	libft.h get_next_line.h
+HEAD_LIBC	=	libft.h
 HEAD_FPF	=	ft_printf.h
 
 C_LIBC		= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
@@ -41,10 +41,12 @@ C_LIBC		= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
 			ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c\
 			ft_strtrim.c ft_tolower.c ft_tostrlowercase.c ft_tostruppercase.c\
 			ft_toupper.c ft_itoa_base.c get_next_line.c\
-			ft_arr_free.c ft_arrlen.c ft_nbrlen.c ft_atoi_base.c
+			ft_arr_free.c ft_arrlen.c ft_nbrlen.c ft_atoi_base.c\
+			ft_clear.c
 
-C_FPF		= 	ft_pf_strjoin.c ft_charjoin.c\
-				ft_printf.c ft_unicode.c ft_conv_sig_int.c ft_conv_unsig_int.c\
+C_FPF		= 	ft_printf.c ft_dprintf.c\
+				ft_pf_strjoin.c ft_charjoin.c\
+				ft_unicode.c ft_conv_sig_int.c ft_conv_unsig_int.c\
 				ft_get_flags.c ft_get_type.c\
 				ft_get_oux.c ft_get_di.c ft_get_c.c ft_get_s.c\
 				ft_output_c_modul.c ft_output_s_modul.c ft_output_d_modul.c\
@@ -66,7 +68,10 @@ INC_FPF 	= 	$(addprefix $(DIR_INC),$(HEAD_FPF))
 
 
 
-all: $(NAME)
+all: obj $(NAME)
+
+obj:
+	@mkdir -p $(DIR_OBJ)
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
@@ -74,18 +79,16 @@ $(NAME): $(OBJ)
 	@echo "Compiling" [ $(NAME) ]
 
 $(DIR_OBJ)%.o: $(DIR_LIBC)%.c $(INC_LIBC)
-	@mkdir -p $(DIR_OBJ)
 	@$(CC) $(FLAGS) $(INC) -c -o $@ $<
 	@echo "Linking" [ $< ]
 
 $(DIR_OBJ)%.o: $(DIR_FPF)%.c $(INC_FPF)
-	@mkdir -p $(DIR_OBJ)
 	@$(CC) $(FLAGS) $(INC) -c -o $@ $<
 	@echo "Linking" [ $< ]
 
 clean:
 	@rm -rf $(DIR_OBJ)
-	@echo "Clean [obj files]"
+	@echo "Clean [ obj files libft ]"
 
 fclean: clean
 	@rm -f $(NAME)
