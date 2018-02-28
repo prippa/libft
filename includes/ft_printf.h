@@ -34,7 +34,7 @@
 # define F_DOT			5
 # define F_COLOR		6
 
-# define FLAG_SIZE		7
+# define FPF_FLAG_SIZE	7
 
 # define PC fpf->format[fpf->i]
 # define PC_1 fpf->format[fpf->i + 1]
@@ -68,7 +68,7 @@ typedef	struct			s_printf
 	int					i;
 	int					size;
 	va_list				args;
-	char				flag[FLAG_SIZE];
+	char				flag[FPF_FLAG_SIZE];
 	int					width;
 	int					precision;
 	int					size_flag;

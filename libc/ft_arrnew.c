@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_clear.c                                         :+:      :+:    :+:   */
+/*   ft_arrnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/18 11:03:36 by prippa            #+#    #+#             */
-/*   Updated: 2018/02/18 11:03:40 by prippa           ###   ########.fr       */
+/*   Created: 2018/02/26 15:44:21 by prippa            #+#    #+#             */
+/*   Updated: 2018/02/26 15:44:26 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_clear(void)
+char	**ft_arrnew(int y, int x, char c)
 {
-	ft_putstr("\033[1J");
-	ft_putstr("\033[;H");
+	char **arr;
+
+	arr = (char **)malloc(sizeof(char *) * y + 1);
+	arr[y] = NULL;
+	while (--y >= 0)
+	{
+		arr[y] = (char *)malloc(sizeof(char) * x + 1);
+		arr[y][x] = '\0';
+		ft_memset(arr[y], c, x);
+	}
+	return (arr);
 }

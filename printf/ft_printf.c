@@ -36,7 +36,7 @@ void		ft_dispatcher(t_printf *fpf)
 
 void		ft_initialization(t_printf *fpf)
 {
-	ft_bzero(fpf->flag, FLAG_SIZE);
+	ft_bzero(fpf->flag, FPF_FLAG_SIZE);
 	fpf->width = 0;
 	fpf->precision = 0;
 	fpf->size_flag = 0;

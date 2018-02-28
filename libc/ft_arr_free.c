@@ -16,11 +16,15 @@ void	ft_arr_free(char ***arr)
 {
 	int i;
 
-	i = 0;
-	while ((*arr)[i])
+	if (*arr)
 	{
-		free((*arr)[i]);
-		i++;
+		i = 0;
+		while ((*arr)[i])
+		{
+			ft_str_free(&(*arr)[i]);
+			i++;
+		}
+		free(*arr);
+		*arr = NULL;
 	}
-	free(*arr);
 }

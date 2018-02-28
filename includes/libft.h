@@ -18,6 +18,7 @@
 # include <fcntl.h>
 
 # define BUFF_SIZE 32
+# define ABS(x) (((x) < 0) ? -(x) : (x))
 
 typedef	struct		s_gnl
 {
@@ -108,12 +109,14 @@ char				*ft_tostruppercase(const char *str);
 int					get_next_line(const int fd, char **line);
 char				*ft_itoa_base(unsigned long long int num,
 					int base, int letter);
+char				**ft_arrnew(int y, int x, char c);
 size_t				ft_arrlen(char **arr);
 void				ft_arr_free(char ***arr);
+void				ft_str_free(char **str);
 int					ft_nbrlen(long long int nb);
 void				ft_putarr(char **arr);
 void				ft_putarr_fd(char **arr, int fd);
 int					ft_atoi_base(const char *str, int base);
-void				ft_clear();
+void				ft_clear(void);
 
 #endif
