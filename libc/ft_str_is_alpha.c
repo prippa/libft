@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tostrlowercase.c                                :+:      :+:    :+:   */
+/*   ft_isstralpha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 15:24:42 by prippa            #+#    #+#             */
-/*   Updated: 2017/11/09 15:25:26 by prippa           ###   ########.fr       */
+/*   Created: 2017/11/09 14:23:47 by prippa            #+#    #+#             */
+/*   Updated: 2017/11/09 14:28:40 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_tostrlowercase(const char *str)
+int	ft_str_is_alpha(const char *str)
 {
-	size_t	i;
-	char	*s;
+	size_t i;
 
 	if (str)
 	{
-		s = ft_strdup(str);
 		i = 0;
-		while (s[i])
+		while (str[i])
 		{
-			if (ft_isalpha(s[i]) && !(ft_islowercase(s[i])))
-				s[i] = ft_tolower(s[i]);
+			if (!(ft_isalpha(str[i])))
+				return (0);
 			i++;
 		}
-		return (s);
+		return (1);
 	}
-	return (NULL);
+	return (0);
 }

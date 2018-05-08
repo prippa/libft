@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isstruppercase.c                                :+:      :+:    :+:   */
+/*   ft_isuppercase.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 14:58:26 by prippa            #+#    #+#             */
-/*   Updated: 2017/11/09 15:05:05 by prippa           ###   ########.fr       */
+/*   Created: 2017/11/09 15:05:37 by prippa            #+#    #+#             */
+/*   Updated: 2017/11/09 15:11:28 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isstruppercase(const char *str)
+int	ft_isupper(int c)
 {
-	size_t i;
-
-	if (str)
-	{
-		i = 0;
-		while (str[i])
-		{
-			if (ft_isalpha(str[i]) && !(ft_isuppercase(str[i])))
-				return (0);
-			i++;
-		}
+	if (c >= 'A' && c <= 'Z')
 		return (1);
-	}
 	return (0);
 }

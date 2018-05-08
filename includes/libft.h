@@ -101,14 +101,14 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int					ft_isspace(int c);
-int					ft_isstrdigit(const char *str);
-int					ft_isstralpha(const char *str);
-int					ft_isuppercase(int c);
-int					ft_islowercase(int c);
-int					ft_isstruppercase(const char *str);
-int					ft_isstrlowercase(const char *str);
-char				*ft_tostrlowercase(const char *str);
-char				*ft_tostruppercase(const char *str);
+int					ft_isupper(int c);
+int					ft_islower(int c);
+int					ft_str_is_digit(const char *str);
+int					ft_str_is_alpha(const char *str);
+int					ft_str_is_upper(const char *str);
+int					ft_str_is_lower(const char *str);
+void				ft_str_to_lower(char **str);
+void				ft_str_to_upper(char **str);
 int					get_next_line(const int fd, char **line);
 char				*ft_itoa_base(unsigned long long int num,
 					int base, int letter);
