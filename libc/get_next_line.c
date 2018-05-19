@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void		*ft_memjoin(void *des, int counter, void *add, int value)
+static void		*ft_memjoin(void *des, int counter, void *add, int value)
 {
 	void	*join;
 	void	*tmp;
@@ -41,7 +41,7 @@ void		*ft_memjoin(void *des, int counter, void *add, int value)
 	return (join);
 }
 
-int			is_nl(void **rest, int *rm, void **gline, int *counter)
+static int		is_nl(void **rest, int *rm, void **gline, int *counter)
 {
 	int		dif;
 	void	*tmp;
@@ -68,7 +68,7 @@ int			is_nl(void **rest, int *rm, void **gline, int *counter)
 	return (0);
 }
 
-t_gnl		*lst_fd(void *rest, int rm, int fd)
+static t_gnl	*lst_fd(void *rest, int rm, int fd)
 {
 	t_gnl	*newlist;
 
@@ -94,7 +94,7 @@ t_gnl		*lst_fd(void *rest, int rm, int fd)
 	return (newlist);
 }
 
-t_gnl		*get_right_list(t_gnl *lst, int fd)
+static t_gnl	*get_right_list(t_gnl *lst, int fd)
 {
 	t_gnl	*l;
 
@@ -115,7 +115,7 @@ t_gnl		*get_right_list(t_gnl *lst, int fd)
 	return (l);
 }
 
-int			get_next_line(const int fd, char **line)
+int				get_next_line(const int fd, char **line)
 {
 	static t_gnl	*pl;
 	t_gnl			*l;
