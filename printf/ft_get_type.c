@@ -6,7 +6,7 @@
 /*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 13:06:18 by prippa            #+#    #+#             */
-/*   Updated: 2018/01/15 13:06:28 by prippa           ###   ########.fr       */
+/*   Updated: 2018/05/19 16:16:50 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_get_type_1(t_printf *fpf)
 	}
 }
 
-static void	ft_get_type(t_printf *fpf)
+void		ft_get_type(t_printf *fpf)
 {
 	if (PC == 's' && (FC = PC))
 		fpf->str = ft_get_s(fpf);

@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-static int	ft_itoa_len(long long int n)
+static int	ft_itoa_len(int n)
 {
-	long long int	flag;
-	int				len;
+	int	flag;
+	int	len;
 
 	if (n < 0)
 		flag = -0 - n;
@@ -32,7 +32,7 @@ static int	ft_itoa_len(long long int n)
 	return (len);
 }
 
-char		*ft_itoa(long long int n)
+char		*ft_itoa(int n)
 {
 	int		len;
 	int		flag;
