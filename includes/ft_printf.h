@@ -123,7 +123,7 @@ void					ft_output_ox_modul(t_printf *fpf);
 void					ft_output_p_modul(t_printf *fpf);
 
 int						ft_atoi(const char *str);
-char					*ft_itoa(long long int num);
+char					*ft_itoa_max(long long int num);
 char					*ft_itoa_base(unsigned long long int num,
 						int base, int letter);
 int						ft_isdigit(int c);

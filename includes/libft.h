@@ -120,7 +120,9 @@ int					ft_nbrlen(long long int nb);
 void				ft_putarr(char **arr);
 void				ft_putarr_fd(char **arr, int fd);
 int					ft_atoi_base(const char *str, int base);
+char				*ft_itoa_max(long long int n);
 long long int		ft_atoi_max(char *str);
 void				ft_clear(void);
+void				ft_memrev(void *dst, size_t n);
 
 #endif
