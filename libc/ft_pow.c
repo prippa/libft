@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: otimofie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/03 17:33:28 by prippa            #+#    #+#             */
-/*   Updated: 2017/11/03 17:33:30 by prippa           ###   ########.fr       */
+/*   Created: 2018/06/03 20:50:17 by otimofie          #+#    #+#             */
+/*   Updated: 2018/06/03 20:50:19 by otimofie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+int		ft_pow(int base, int level)
 {
-	size_t	i;
-	char	*fresh;
+	int	res;
 
-	if (!s || !f)
-		return (NULL);
-	if ((fresh = ft_strnew(ft_strlen(s))) == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	res = 1;
+	if (level == 0)
+		return (1);
+	while (level)
 	{
-		fresh[i] = (*f)(s[i]);
-		i++;
+		res = res * base;
+		level--;
 	}
-	return (fresh);
+	return (res);
 }

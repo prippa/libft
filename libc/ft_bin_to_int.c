@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_bin_to_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: otimofie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/03 17:33:28 by prippa            #+#    #+#             */
-/*   Updated: 2017/11/03 17:33:30 by prippa           ###   ########.fr       */
+/*   Created: 2018/06/03 20:53:48 by otimofie          #+#    #+#             */
+/*   Updated: 2018/06/03 20:53:52 by otimofie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+int		ft_bin_to_int(char *str, int index)
 {
-	size_t	i;
-	char	*fresh;
+	int decimal;
+	int i;
 
-	if (!s || !f)
-		return (NULL);
-	if ((fresh = ft_strnew(ft_strlen(s))) == NULL)
-		return (NULL);
+	decimal = 0;
 	i = 0;
-	while (s[i])
+	while (i < 8)
 	{
-		fresh[i] = (*f)(s[i]);
+		if (str[index] == '1')
+			decimal += ft_pow(2, i);
 		i++;
+		index--;
 	}
-	return (fresh);
+	return (decimal);
 }

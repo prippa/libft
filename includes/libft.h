@@ -125,4 +125,8 @@ long long int		ft_atoi_max(char *str);
 void				ft_clear(void);
 void				ft_memrev(void *dst, size_t n);
 
+char				*ft_joinfree(char *s1, char *s2, int j);
+int					ft_pow(int base, int level);
+int					ft_bin_to_int(char *str, int index);
+
 #endif
