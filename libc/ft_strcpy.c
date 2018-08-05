@@ -20,8 +20,8 @@ char	*ft_strcpy(char *dst, const char *src)
 	while (src[i])
 	{
 		dst[i] = src[i];
-		i++;
+		++i;
 	}
-	dst[i] = '\0';
+	dst[i] = 0;
 	return (dst);
 }
