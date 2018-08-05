@@ -16,6 +16,7 @@ In this project i implemented many functions from standard libraries like: **str
 * [putchar](#putchar)
 * [puts](#puts)
 * [printf](#printf)
+* [getline](#getline)
 ***
 
 ## bzero
@@ -49,6 +50,18 @@ In this project i implemented many functions from standard libraries like: **str
 #### main test
 ![](https://thumbs.gfycat.com/DeafeningDisfiguredKakapo-size_restricted.gif)
 #### output result
-![](https://thumbs.gfycat.com/OrneryCarefreeHammerheadshark-size_restricted.gif)
+![](https://thumbs.gfycat.com/FirsthandHelpfulKob-size_restricted.gif)
+
+## getline
+#### main test
+
+get_next_line prototype: **int    get_next_line(const int fd, char \*\*line);**
+
+The return value can be **1**, **0** or **-1** depending on whether a line has been read,
+when the reading has been completed, or if an error has happened respectively.
+
+![](https://thumbs.gfycat.com/AdoredBleakButterfly-size_restricted.gif)
+#### output result
+![](https://thumbs.gfycat.com/ImmaterialAngryBrahmanbull-size_restricted.gif)
 
 [more info](https://github.com/prippa/libft/blob/master/libft.en.pdf)
