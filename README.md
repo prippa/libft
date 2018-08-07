@@ -53,13 +53,13 @@ In this project i implemented many functions from standard libraries like: **str
 ![](https://thumbs.gfycat.com/FirsthandHelpfulKob-size_restricted.gif)
 
 ## getline
-#### main test
+**get_next_line** in general works same as standard function **getline**
 
-get_next_line prototype: **int    get_next_line(const int fd, char \*\*line);**
+**get_next_line** prototype: **int    get_next_line(const int fd, char \*\*line);**
 
 The return value can be **1**, **0** or **-1** depending on whether a line has been read,
 when the reading has been completed, or if an error has happened respectively.
-
+#### main test
 ![](https://thumbs.gfycat.com/AdoredBleakButterfly-size_restricted.gif)
 #### output result
 ![](https://thumbs.gfycat.com/ImmaterialAngryBrahmanbull-size_restricted.gif)
