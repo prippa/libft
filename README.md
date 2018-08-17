@@ -2,7 +2,7 @@
 ## First project in school 42
 ### Comprehension C from scratch
 
-In this project i implemented many functions from standard libraries like: **string.h**, **stdlib.h**, **stdio.h** ... etc. You may ask WHY? First of all it's a really good experience. Second is that in school 42 many of projects in general should be implemented using only: **malloc**, **free**, **write**, **read**, **exit**. Standard Functions. So if you write a bad **libft** this will affect future projects.
+In this project i implemented many functions from standard libraries like: **string.h**, **stdlib.h**, **stdio.h** ... etc. You may ask WHY? First of all it's a really good experience. Second is that in school 42 many of projects in general should be implemented using only: **malloc**, **free**, **write**, **open**, **read**, **close**, **exit**. Standard Functions. So if you write a bad **libft** this will affect future projects.
 
 ***
 ### Here is some basic functions that are often used by programmers in C
