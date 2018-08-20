@@ -14,23 +14,23 @@
 
 long long int	ft_atoi_max(char *str)
 {
-	int				i;
+	char			sign;
 	long long int	res;
-	int				sign;
 
-	i = 0;
-	res = 0;
 	sign = 1;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-')
-		sign = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (ft_isdigit(str[i]))
+	res = 0;
+	while (ft_isspace(*str))
+		++str;
+	if (*str == '-' || *str == '+')
 	{
-		res = res * 10 + str[i] - '0';
-		i++;
+		if (*str == '-')
+			sign = -1;
+		++str;
+	}
+	while (ft_isdigit(*str))
+	{
+		res = (res * 10) + (*str - '0');
+		++str;
 	}
 	return (res * sign);
 }
