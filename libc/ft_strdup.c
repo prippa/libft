@@ -18,12 +18,12 @@ char	*ft_strdup(const char *s1)
 	char		*tmp;
 
 	tmp = (char *)s1;
-	while (*tmp != '\0')
+	while (*tmp)
 		++tmp;
 	if (!(str = (char *)malloc(sizeof(char) * ((tmp - s1) + 1))))
 		return (NULL);
 	tmp = str;
-	while ((*tmp++ = *s1++) != '\0')
+	while ((*tmp++ = *s1++))
 		;
 	return (str);
 }

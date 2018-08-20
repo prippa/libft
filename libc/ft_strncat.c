@@ -17,11 +17,11 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	char *tmp;
 
 	tmp = s1;
-	while (*tmp != '\0')
+	while (*tmp)
 		++tmp;
 	while (n)
 	{
-		if ((*tmp = *s2++) == '\0')
+		if ((*tmp = *s2++))
 			break;
 		++tmp;
 		--n;

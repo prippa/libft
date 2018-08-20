@@ -19,7 +19,7 @@ char	*ft_strcat(char *s1, const char *s2)
 	tmp = s1;
 	while (*tmp)
 		++tmp;
-	while ((*tmp++ = *s2++) != '\0')
+	while ((*tmp++ = *s2++))
 		;
 	return (s1);
 }
