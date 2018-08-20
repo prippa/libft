@@ -20,31 +20,31 @@ In this project i implemented many functions from standard libraries like: **str
 ***
 
 ## bzero
-![]()
+![](https://thumbs.gfycat.com/NegligibleClumsyBarbet-size_restricted.gif)
 
 ## strlen
-![]()
+![](https://thumbs.gfycat.com/CourageousDescriptiveFreshwatereel-size_restricted.gif)
 
 ## strcpy
-![]()
+![](https://thumbs.gfycat.com/ThunderousSkeletalClumber-size_restricted.gif)
 
 ## strcat
-![]()
+![](https://thumbs.gfycat.com/NearAdvancedArgentineruddyduck-size_restricted.gif)
 
 ## strcmp
-![]()
+![](https://thumbs.gfycat.com/ChiefRemoteFlyinglemur-size_restricted.gif)
 
 ## strdup
-![]()
+![](https://thumbs.gfycat.com/MadeupJitteryAngora-size_restricted.gif)
 
 ## atoi
-![]()
+![](https://thumbs.gfycat.com/LeanShabbyGrayreefshark-size_restricted.gif)
 
 ## putchar
-![](https://thumbs.gfycat.com/SolidFlatAntlion-size_restricted.gif)
+![](https://thumbs.gfycat.com/CommonBitesizedKestrel-size_restricted.gif)
 
 ## puts
-![]()
+![](https://thumbs.gfycat.com/SoftCostlyGroundbeetle-size_restricted.gif)
 
 ## printf
 #### main test
