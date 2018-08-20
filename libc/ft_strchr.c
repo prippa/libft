@@ -14,14 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	char	*str;
-
-	str = (char*)s;
-	i = 0;
-	while (str[i] && str[i] != c)
-		i++;
-	if (str[i] == c)
-		return (&str[i]);
+	while (*s != '\0' && *s != c)
+		++s;
+	if (*s == c)
+		return ((char *)s);
 	return (NULL);
 }
