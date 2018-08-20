@@ -21,8 +21,8 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 		++tmp;
 	while (n)
 	{
-		if ((*tmp = *s2++))
-			break;
+		if (!(*tmp = *s2++))
+			break ;
 		++tmp;
 		--n;
 	}
