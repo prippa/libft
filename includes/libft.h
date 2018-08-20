@@ -112,7 +112,7 @@ void				ft_str_to_upper(char **str);
 int					get_next_line(const int fd, char **line);
 char				*ft_itoa_base(unsigned long long int num,
 					int base, int letter);
-char				**ft_arrnew(int y, int x, char c);
+char				**ft_arrnew(size_t y, size_t x, int c);
 size_t				ft_arrlen(char **arr);
 void				ft_arr_free(char ***arr);
 void				ft_str_free(char **str);

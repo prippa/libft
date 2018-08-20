@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-char	**ft_arrnew(int y, int x, char c)
+char	**ft_arrnew(size_t y, size_t x, int c)
 {
 	char **arr;
 
-	if (!(arr = (char **)malloc(sizeof(char *) * y + 1)))
+	if (!(arr = (char **)malloc(sizeof(char *) * (y + 1))))
 		return (NULL);
 	arr[y] = NULL;
-	while (--y >= 0)
+	while (y--)
 	{
-		if (!(arr[y] = (char *)malloc(sizeof(char) * x + 1)))
+		if (!(arr[y] = (char *)malloc(sizeof(char) * (x + 1))))
 			return (NULL);
-		arr[y][x] = '\0';
 		ft_memset(arr[y], c, x);
+		arr[y][x] = '\0';
 	}
 	return (arr);
 }

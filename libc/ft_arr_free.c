@@ -14,16 +14,13 @@
 
 void	ft_arr_free(char ***arr)
 {
-	int i;
-
-	if (*arr)
+	char **tmp;
+	
+	if (arr && *arr)
 	{
-		i = 0;
-		while ((*arr)[i])
-		{
-			ft_strdel(&(*arr)[i]);
-			i++;
-		}
+		tmp = *arr;
+		while (*tmp)
+			free(*tmp++);
 		free(*arr);
 		*arr = NULL;
 	}

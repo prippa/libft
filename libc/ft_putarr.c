@@ -14,12 +14,6 @@
 
 void	ft_putarr(char **arr)
 {
-	int i;
-
-	i = 0;
-	while (arr[i])
-	{
-		ft_putendl(arr[i]);
-		i++;
-	}
+	while (*arr)
+		ft_putendl(*arr++);
 }
