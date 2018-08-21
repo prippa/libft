@@ -14,16 +14,15 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char *s1;
-	char *s2;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
+	unsigned char	ch;
 
-	s1 = (char *)dst;
-	s2 = (char *)src;
+	ptr1 = (unsigned char *)dst;
+	ptr2 = (unsigned char *)src;
+	ch = (unsigned char)c;
 	while (n--)
-	{
-		*s1++ = *s2;
-		if (*s2++ == (char)c)
-			return (s1);
-	}
+		if ((*ptr1++ = *ptr2++) == ch)
+			return (ptr1);
 	return (NULL);
 }

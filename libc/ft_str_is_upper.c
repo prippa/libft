@@ -14,18 +14,11 @@
 
 int	ft_str_is_upper(const char *str)
 {
-	size_t i;
-
-	if (str)
+	while (*str)
 	{
-		i = 0;
-		while (str[i])
-		{
-			if (ft_isalpha(str[i]) && !(ft_isupper(str[i])))
-				return (0);
-			i++;
-		}
-		return (1);
+		if (ft_isalpha(*str) && ft_islower(*str++))
+			return (0);
+		++str;
 	}
-	return (0);
+	return (1);
 }

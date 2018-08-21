@@ -14,18 +14,16 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	size_t	i;
-	char	*fresh;
+	char	*tmp;
+	char	*new_obj;
 
 	if (!s || !f)
 		return (NULL);
-	if ((fresh = ft_strnew(ft_strlen(s))) == NULL)
+	if (!(new_obj = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		fresh[i] = (*f)(s[i]);
-		i++;
-	}
-	return (fresh);
+	tmp = new_obj;
+	while (*s)
+		*tmp++ = f(*s++);
+	*tmp = 0;
+	return (new_obj);
 }

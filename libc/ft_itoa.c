@@ -12,51 +12,67 @@
 
 #include "libft.h"
 
-static int	ft_itoa_len(int n)
+char	*ft_itoa(int n)
 {
-	int	flag;
-	int	len;
+	char	*new_obj;
+	short	size;
 
-	if (n < 0)
-		flag = -0 - n;
-	else
-		flag = n;
-	len = 0;
-	while (flag)
-	{
-		flag /= 10;
-		len++;
-	}
-	if (n == 0)
-		len++;
-	return (len);
-}
-
-char		*ft_itoa(int n)
-{
-	int		len;
-	int		flag;
-	char	*fresh;
-
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	len = ft_itoa_len(n);
-	flag = 0;
-	if (n < 0)
-		flag++;
-	if ((fresh = ft_strnew(len + flag)) == NULL)
+	size = ft_nbrlen(n);
+	size += (n < 0 ? 1 : 0);
+	if (!(new_obj = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
-	if (flag == 1)
+	new_obj[size] = 0;
+	new_obj[0] = (n < 0 ? '-' : '0');
+	while (n)
 	{
-		fresh[0] = '-';
-		n = -0 - n;
-	}
-	len += flag;
-	fresh[len] = '\0';
-	while (flag <= --len)
-	{
-		fresh[len] = ((n % 10) + '0');
+		new_obj[--size] = ABS((n % 10)) + '0';
 		n /= 10;
 	}
-	return (fresh);
+	return (new_obj);
+}
+
+char	*ft_itoa_max(long long int n)
+{
+	char	*new_obj;
+	short	size;
+
+	size = ft_nbrlen(n);
+	size += (n < 0 ? 1 : 0);
+	if (!(new_obj = (char *)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	new_obj[size] = 0;
+	new_obj[0] = (n < 0 ? '-' : '0');
+	while (n)
+	{
+		new_obj[--size] = ABS((n % 10)) + '0';
+		n /= 10;
+	}
+	return (new_obj);
+}
+
+char	*ft_itoa_base(unsigned long long int num, int base, int letter)
+{
+	int						i;
+	unsigned long long int	tmp;
+	unsigned long long int	op;
+	char					buf[65];
+
+	if (base < 2 && base > 16)
+		return (NULL);
+	buf[64] = '\0';
+	if (num == 0)
+		return (ft_strdup("0"));
+	tmp = num;
+	i = 64;
+	while (tmp)
+	{
+		op = tmp % base;
+		tmp = tmp / base;
+		i--;
+		if (base > 10 && op > 9)
+			buf[i] = op + letter;
+		else
+			buf[i] = op + 48;
+	}
+	return (ft_strdup(buf + i));
 }

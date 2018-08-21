@@ -14,13 +14,13 @@
 
 void	ft_str_to_upper(char **str)
 {
-	int i;
+	char *tmp;
 
-	i = 0;
-	while ((*str)[i])
+	tmp = *str;
+	while (*tmp)
 	{
-		if (ft_islower((*str)[i]))
-			(*str)[i] = ft_toupper((*str)[i]);
-		i++;
+		if (ft_islower(*tmp))
+			*tmp = ft_toupper(*tmp);
+		++tmp;
 	}
 }

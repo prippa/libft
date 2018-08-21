@@ -14,18 +14,8 @@
 
 int	ft_str_is_alpha(const char *str)
 {
-	size_t i;
-
-	if (str)
-	{
-		i = 0;
-		while (str[i])
-		{
-			if (!(ft_isalpha(str[i])))
-				return (0);
-			i++;
-		}
-		return (1);
-	}
-	return (0);
+	while (*str)
+		if (!ft_isalpha(*str++))
+			return (0);
+	return (1);
 }

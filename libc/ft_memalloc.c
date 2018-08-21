@@ -14,10 +14,10 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void *fresh;
+	void *new_obj;
 
-	fresh = malloc(size);
-	if (fresh)
-		fresh = ft_memset(fresh, 0, size);
-	return (fresh);
+	if (!(new_obj = malloc(size)))
+		return (NULL);
+	ft_bzero(new_obj, size);
+	return (new_obj);
 }

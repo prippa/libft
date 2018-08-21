@@ -10,25 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_nbrlen(long long int nbr)
-{
-	int len;
+#include "libft.h"
 
-	len = 1;
-	if (nbr == -2147483648)
-	{
-		len++;
-		nbr = nbr / 10;
-	}
-	if (nbr < 0)
-	{
-		nbr = nbr * -1;
-		len++;
-	}
-	while (nbr > 9)
-	{
-		nbr = nbr / 10;
-		len++;
-	}
-	return (len);
+short	ft_nbrlen(long long int nb)
+{
+	short i;
+
+	i = 1;
+	while ((nb /= 10))
+		++i;
+	return (i);
 }

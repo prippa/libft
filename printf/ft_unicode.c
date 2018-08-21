@@ -49,49 +49,49 @@ static size_t	ft_wbytelen(wchar_t *ws)
 	return (byte_len);
 }
 
-static int		ft_pull_wchar(wchar_t wc, char *fresh, int i)
+static int		ft_pull_wchar(wchar_t wc, char *new_obj, int i)
 {
 	int		size;
 
 	size = ft_wcharlen(wc);
 	if (size == 1)
-		fresh[i++] = wc;
+		new_obj[i++] = wc;
 	else if (size == 2)
 	{
-		fresh[i++] = (wc >> 6) + 0xC0;
-		fresh[i++] = (wc & 0x3F) + 0x80;
+		new_obj[i++] = (wc >> 6) + 0xC0;
+		new_obj[i++] = (wc & 0x3F) + 0x80;
 	}
 	else if (size == 3)
 	{
-		fresh[i++] = (wc >> 12) + 0xE0;
-		fresh[i++] = ((wc >> 6) & 0x3F) + 0x80;
-		fresh[i++] = (wc & 0x3F) + 0x80;
+		new_obj[i++] = (wc >> 12) + 0xE0;
+		new_obj[i++] = ((wc >> 6) & 0x3F) + 0x80;
+		new_obj[i++] = (wc & 0x3F) + 0x80;
 	}
 	else
 	{
-		fresh[i++] = (wc >> 18) + 0xF0;
-		fresh[i++] = ((wc >> 12) & 0x3F) + 0x80;
-		fresh[i++] = ((wc >> 6) & 0x3F) + 0x80;
-		fresh[i++] = (wc & 0x3F) + 0x80;
+		new_obj[i++] = (wc >> 18) + 0xF0;
+		new_obj[i++] = ((wc >> 12) & 0x3F) + 0x80;
+		new_obj[i++] = ((wc >> 6) & 0x3F) + 0x80;
+		new_obj[i++] = (wc & 0x3F) + 0x80;
 	}
 	return (i);
 }
 
 char			*ft_wstr_to_str(wchar_t *ws)
 {
-	char	*fresh;
+	char	*new_obj;
 	int		i;
 	int		len;
 
 	if (!ws)
 		return (NULL);
 	len = ft_wbytelen(ws);
-	if (!(fresh = (char *)malloc(sizeof(char) * len + 1)))
+	if (!(new_obj = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
-	fresh[len] = '\0';
+	new_obj[len] = '\0';
 	len = 0;
 	i = 0;
 	while (ws[i])
-		len = ft_pull_wchar(ws[i++], fresh, len);
-	return (fresh);
+		len = ft_pull_wchar(ws[i++], new_obj, len);
+	return (new_obj);
 }

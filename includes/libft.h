@@ -19,8 +19,6 @@
 
 # define BUFF_SIZE 32
 # define ABS(x) (((x) < 0) ? -(x) : (x))
-# define MAXINT 2147483647
-# define MININT -2147483648
 
 typedef struct		s_gnl
 {
@@ -116,14 +114,14 @@ char				**ft_arrnew(size_t y, size_t x, int c);
 size_t				ft_arrlen(char **arr);
 void				ft_arr_free(char ***arr);
 void				ft_str_free(char **str);
-int					ft_nbrlen(long long int nb);
+short				ft_nbrlen(long long int nb);
 void				ft_putarr(char **arr);
 void				ft_putarr_fd(char **arr, int fd);
-int					ft_atoi_base(const char *str, int base);
+long long int		ft_atoi_base(const char *str, int base);
 char				*ft_itoa_max(long long int n);
 long long int		ft_atoi_max(char *str);
 void				ft_clear(void);
-void				ft_memrev(void *dst, size_t n);
+void				*ft_memrev(void *dst, size_t n);
 
 char				*ft_joinfree(char *s1, char *s2, int j);
 int					ft_pow(int base, int level);

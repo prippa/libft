@@ -15,19 +15,19 @@
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list *link;
-	t_list *fresh;
+	t_list *new_obj;
 
 	if (!lst)
 		return (NULL);
-	if ((fresh = ft_lstnew(lst->content, lst->content_size)) == NULL)
+	if ((new_obj = ft_lstnew(lst->content, lst->content_size)) == NULL)
 		return (NULL);
-	fresh = f(lst);
-	link = fresh;
+	new_obj = f(lst);
+	link = new_obj;
 	while (lst->next)
 	{
 		link->next = f(lst->next);
 		link = link->next;
 		lst = lst->next;
 	}
-	return (fresh);
+	return (new_obj);
 }

@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	t_list	*fresh;
+	t_list	*new_obj;
 	void	*data;
 
 	if ((data = ft_memalloc(content_size + 1)) == NULL)
@@ -26,10 +26,10 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		data = NULL;
 		content_size = 0;
 	}
-	if ((fresh = (t_list*)malloc(sizeof(t_list))) == NULL)
+	if ((new_obj = (t_list*)malloc(sizeof(t_list))) == NULL)
 		return (NULL);
-	fresh->content = data;
-	fresh->content_size = content_size;
-	fresh->next = NULL;
-	return (fresh);
+	new_obj->content = data;
+	new_obj->content_size = content_size;
+	new_obj->next = NULL;
+	return (new_obj);
 }

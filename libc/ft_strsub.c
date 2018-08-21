@@ -14,21 +14,15 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t		length;
-	char		*fresh;
+	char	*new_obj;
 
 	if (!s)
 		return (NULL);
-	length = ft_strlen(s);
-	fresh = NULL;
-	if ((start + len) <= length)
-	{
-		fresh = ft_strnew(len);
-		if (fresh)
-		{
-			fresh = ft_strncpy(fresh, s + start, len);
-			fresh[len] = '\0';
-		}
-	}
-	return (fresh);
+	if (!(new_obj = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	while (start--)
+		++s;
+	ft_strncpy(new_obj, s, len);
+	new_obj[len] = 0;
+	return (new_obj);
 }
