@@ -13,14 +13,12 @@ In this project i implemented many functions from standard libraries like: **str
 * [strcmp](#strcmp)
 * [strdup](#strdup)
 * [atoi](#atoi)
-* [putchar](#putchar)
-* [puts](#puts)
 * [printf](#printf)
 * [getline](#getline)
 ***
 
 ## bzero
-![](https://thumbs.gfycat.com/NegligibleClumsyBarbet-size_restricted.gif)
+![](https://thumbs.gfycat.com/LastingJubilantFawn-size_restricted.gif)
 
 ## strlen
 ![](https://thumbs.gfycat.com/CourageousDescriptiveFreshwatereel-size_restricted.gif)
@@ -38,13 +36,7 @@ In this project i implemented many functions from standard libraries like: **str
 ![](https://thumbs.gfycat.com/MadeupJitteryAngora-size_restricted.gif)
 
 ## atoi
-![](https://thumbs.gfycat.com/LeanShabbyGrayreefshark-size_restricted.gif)
-
-## putchar
-![](https://thumbs.gfycat.com/CommonBitesizedKestrel-size_restricted.gif)
-
-## puts
-![](https://thumbs.gfycat.com/SoftCostlyGroundbeetle-size_restricted.gif)
+![](https://thumbs.gfycat.com/SlimThatAntlion-size_restricted.gif)
 
 ## printf
 #### main test
