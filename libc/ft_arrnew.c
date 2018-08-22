@@ -15,7 +15,9 @@
 char	**ft_arrnew(size_t y, size_t x, int c)
 {
 	char **arr;
+	char ch;
 
+	ch = 0;
 	if (!(arr = (char **)malloc(sizeof(char *) * (y + 1))))
 		return (NULL);
 	arr[y] = NULL;
@@ -24,7 +26,7 @@ char	**ft_arrnew(size_t y, size_t x, int c)
 		if (!(arr[y] = (char *)malloc(sizeof(char) * (x + 1))))
 			return (NULL);
 		ft_memset(arr[y], c, x);
-		arr[y][x] = '\0';
+		arr[y][x] = ch;
 	}
 	return (arr);
 }

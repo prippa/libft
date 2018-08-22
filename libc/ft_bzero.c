@@ -15,8 +15,10 @@
 void	ft_bzero(void *s, size_t n)
 {
 	char *ptr;
+	char ch;
 
 	ptr = (char *)s;
+	ch = 0;
 	while (n--)
-		*ptr++ = 0;
+		ptr[n] = ch;
 }

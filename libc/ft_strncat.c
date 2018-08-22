@@ -19,13 +19,9 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	tmp = s1;
 	while (*tmp)
 		++tmp;
-	while (n)
-	{
-		if (!(*tmp = *s2++))
-			break ;
-		++tmp;
-		--n;
-	}
+	while (n--)
+		if (!(*tmp++ = *s2++))
+			return (s1);
 	*tmp = 0;
 	return (s1);
 }

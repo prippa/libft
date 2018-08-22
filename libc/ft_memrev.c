@@ -14,19 +14,19 @@
 
 void	*ft_memrev(void *dst, size_t n)
 {
-	unsigned char	c;
+	unsigned char	tmp;
 	unsigned char	*ptr;
 	size_t			i;
 
 	if (!n)
 		return (dst);
 	ptr = (unsigned char *)dst;
-	i = 0;
-	while (n - 1 > i)
+	i = -1;
+	while (--n > ++i)
 	{
-		c = ptr[i];
-		ptr[i++] = ptr[n - 1];
-		ptr[--n] = c;
+		tmp = ptr[i];
+		ptr[i] = ptr[n];
+		ptr[n] = tmp;
 	}
 	return (dst);
 }

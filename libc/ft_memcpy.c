@@ -20,6 +20,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	ptr1 = (unsigned char *)dst;
 	ptr2 = (unsigned char *)src;
 	while (n--)
-		*ptr1++ = *ptr2++;
+		ptr1[n] = ptr2[n];
 	return (dst);
 }

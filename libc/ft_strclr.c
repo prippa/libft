@@ -12,7 +12,10 @@
 
 void	ft_strclr(char *s)
 {
+	char c;
+
+	c = 0;
 	if (s)
 		while (*s)
-			*s++ = 0;
+			*s++ = c;
 }

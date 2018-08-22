@@ -22,12 +22,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	srclen = ft_strlen(src);
 	if (dstsize < dstlen)
 		return (dstsize + srclen);
-	i = 0;
-	while (src[i] && (dstlen + i + 1) < dstsize)
-	{
-		dst[dstlen + i] = src[i];
-		i++;
-	}
-	dst[dstlen + i] = '\0';
+	i = dstlen;
+	--dstsize;
+	while (*src && i < dstsize)
+		dst[i++] = *src++;
+	dst[i] = 0;
 	return (dstlen + srclen);
 }
