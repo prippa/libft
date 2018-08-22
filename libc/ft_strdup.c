@@ -14,16 +14,10 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char		*str;
-	char		*tmp;
+	char		*new_obj;
 
-	tmp = (char *)s1;
-	while (*tmp)
-		++tmp;
-	if (!(str = (char *)malloc(sizeof(char) * ((tmp - s1) + 1))))
+	if (!(new_obj = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
 		return (NULL);
-	tmp = str;
-	while ((*tmp++ = *s1++))
-		;
-	return (str);
+	ft_strcpy(new_obj, s1);
+	return (new_obj);
 }
