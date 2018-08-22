@@ -18,10 +18,10 @@ In this project i implemented many functions from standard libraries like: **str
 ***
 
 ## bzero
-![](https://thumbs.gfycat.com/LastingJubilantFawn-size_restricted.gif)
+![](https://thumbs.gfycat.com/UnluckyAmbitiousCockerspaniel-size_restricted.gif)
 
 ## strlen
-![](https://thumbs.gfycat.com/CourageousDescriptiveFreshwatereel-size_restricted.gif)
+![](https://thumbs.gfycat.com/DentalSillyGalah-size_restricted.gif)
 
 ## strcpy
 ![](https://thumbs.gfycat.com/ThunderousSkeletalClumber-size_restricted.gif)
@@ -30,10 +30,10 @@ In this project i implemented many functions from standard libraries like: **str
 ![](https://thumbs.gfycat.com/NearAdvancedArgentineruddyduck-size_restricted.gif)
 
 ## strcmp
-![](https://thumbs.gfycat.com/ChiefRemoteFlyinglemur-size_restricted.gif)
+![](https://thumbs.gfycat.com/OrangeResponsibleHawaiianmonkseal-size_restricted.gif)
 
 ## strdup
-![](https://thumbs.gfycat.com/MadeupJitteryAngora-size_restricted.gif)
+![](https://thumbs.gfycat.com/LeftHeavenlyHorseshoebat-size_restricted.gif)
 
 ## atoi
 ![](https://thumbs.gfycat.com/SlimThatAntlion-size_restricted.gif)
