@@ -17,14 +17,13 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-# define BUFF_SIZE 32
+# define BUFF_SIZE 80
 # define ABS(x) (((x) < 0) ? -(x) : (x))
 
-typedef struct		s_gnl
+typedef	struct		s_gnl
 {
-	void			*rest;
-	void			*start;
-	int				rm;
+	char			*s;
+	size_t			i;
 	int				fd;
 	struct s_gnl	*next;
 }					t_gnl;
@@ -54,7 +53,7 @@ char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack,
-					const char *needle, size_t len);
+						const char *needle, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
@@ -109,7 +108,7 @@ void				ft_str_to_lower(char **str);
 void				ft_str_to_upper(char **str);
 int					get_next_line(const int fd, char **line);
 char				*ft_itoa_base(unsigned long long int num,
-					int base, int letter);
+						int base, int letter);
 char				**ft_arrnew(size_t y, size_t x, int c);
 size_t				ft_arrlen(char **arr);
 void				ft_arr_free(char ***arr);
@@ -122,9 +121,7 @@ char				*ft_itoa_max(long long int n);
 long long int		ft_atoi_max(char *str);
 void				ft_clear(void);
 void				*ft_memrev(void *dst, size_t n);
-
-char				*ft_joinfree(char *s1, char *s2, int j);
-int					ft_pow(int base, int level);
-int					ft_bin_to_int(char *str, int index);
+char				*ft_strjoin_free(char **dst, const char *src,
+						size_t dstsize, size_t srcsize);
 
 #endif
