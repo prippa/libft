@@ -12,72 +12,49 @@
 
 #include "libft.h"
 
-static size_t	ft_count_word(char const *s, char c)
+static size_t	ft_get_size(char const *s, char c)
 {
-	size_t count;
-	size_t i;
+	size_t size;
 
-	count = 1;
-	i = 0;
-	while (s[i] == c)
-		i++;
-	if (!s[i])
-		return (count - 1);
-	while (s[i])
+	size = 0;
+	while (*s)
 	{
-		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
-			count++;
-		i++;
+		if (*s != c)
+		{
+			++size;
+			while (*s && *s != c)
+				++s;
+		}
+		else
+			++s;
 	}
-	return (count);
-}
-
-static char		*ft_split(char const *s, char c, size_t *si)
-{
-	size_t	i;
-	size_t	len;
-	char	*str;
-
-	while (s[*si] && s[*si] == c)
-		*si += 1;
-	len = 0;
-	i = 0;
-	while (s[*si + len] && s[*si + len] != c)
-		len++;
-	if ((str = (char*)malloc(sizeof(char) * (len + 1))) == NULL)
-		return (NULL);
-	while (i < len)
-	{
-		str[i] = s[*si];
-		*si += 1;
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	return (size);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
-	size_t	words;
+	char	**res;
 	size_t	i;
-	size_t	si;
-	char	**result;
+	size_t	len;
 
-	if (!s || !c)
-		return (NULL);
-	words = ft_count_word((char*)s, c);
-	if ((result = (char**)malloc(sizeof(char*) * (words + 1))) == NULL)
-		return (NULL);
-	if (words)
+	if (!s || !c
+		|| !(res = (char **)malloc(sizeof(char *) * (ft_get_size(s, c) + 1))))
+			return (NULL);
+	i = -1;
+	while (*s)
 	{
-		i = 0;
-		si = 0;
-		while (i < words)
+		if (*s != c)
 		{
-			result[i] = ft_split(s, c, &si);
-			i++;
+			len = 0;
+			while (*(s + len) && *(s + len) != c)
+				++len;
+			if (!(res[++i] = ft_strsub(s, 0, len)))
+				return (NULL);
+			s += len;
 		}
+		else
+			++s;
 	}
-	result[words] = NULL;
-	return (result);
+	res[++i] = NULL;
+	return (res);
 }
