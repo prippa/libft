@@ -35,6 +35,14 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef	struct		s_list2
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list2	*next;
+	struct s_list2	*prev;
+}					t_list2;
+
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
@@ -93,9 +101,21 @@ void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstadd(t_list **alst, t_list *new_obj);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+t_list2				*ft_lst2new(void const *content, size_t content_size);
+void				ft_lst2delone(t_list2 **obj, void (*del)(void *, size_t));
+void				ft_lst2del_by_obj(t_list2 **start, t_list2 **end,
+						t_list2 *obj, void (*del)(void *, size_t));
+void				ft_lst2del(t_list2 **start, t_list2 **end,
+						void (*del)(void *, size_t));
+void				ft_lst2_push_front(t_list2 **start, t_list2 **end,
+						t_list2 *new_obj);
+void				ft_lst2_push_back(t_list2 **start, t_list2 **end,
+						t_list2 *new_obj);
+void				ft_lst2iter(t_list2 *start, void (*f)(t_list2 *elem));
 
 int					ft_isspace(int c);
 int					ft_isupper(int c);
@@ -112,7 +132,6 @@ char				*ft_itoa_base(unsigned long long int num,
 char				**ft_arrnew(size_t y, size_t x, int c);
 size_t				ft_arrlen(char **arr);
 void				ft_arrdel(char ***arr);
-void				ft_str_free(char **str);
 short				ft_nbrlen(long long int nb);
 void				ft_putarr(char **arr);
 void				ft_putarr_fd(char **arr, int fd);
