@@ -17,16 +17,18 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	t_list	*new_obj;
 	void	*data;
 
-	if ((data = ft_memalloc(content_size + 1)) == NULL)
-		return (NULL);
 	if (content)
+	{
+		if (!(data = malloc(content_size)))
+			return (NULL);
 		ft_memcpy(data, content, content_size);
+	}
 	else
 	{
 		data = NULL;
 		content_size = 0;
 	}
-	if ((new_obj = (t_list*)malloc(sizeof(t_list))) == NULL)
+	if (!(new_obj = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
 	new_obj->content = data;
 	new_obj->content_size = content_size;

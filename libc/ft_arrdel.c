@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_arr_free(char ***arr)
+void	ft_arrdel(char ***arr)
 {
 	char **tmp;
 	

@@ -18,7 +18,6 @@ static size_t	ft_get_size(char const *s, char c)
 
 	size = 0;
 	while (*s)
-	{
 		if (*s != c)
 		{
 			++size;
@@ -27,7 +26,6 @@ static size_t	ft_get_size(char const *s, char c)
 		}
 		else
 			++s;
-	}
 	return (size);
 }
 
@@ -42,7 +40,6 @@ char			**ft_strsplit(char const *s, char c)
 			return (NULL);
 	i = -1;
 	while (*s)
-	{
 		if (*s != c)
 		{
 			len = 0;
@@ -54,7 +51,6 @@ char			**ft_strsplit(char const *s, char c)
 		}
 		else
 			++s;
-	}
 	res[++i] = NULL;
 	return (res);
 }
