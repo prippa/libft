@@ -18,8 +18,7 @@ void	ft_lstadd(t_list **alst, t_list *new_obj)
 	*alst = new_obj;
 }
 
-void	ft_lst2_push_front(t_list2 **start, t_list2 **end,
-			t_list2 *new_obj)
+void	ft_lst2_push_front(t_list2 **start, t_list2 **end, t_list2 *new_obj)
 {
 	new_obj->next = *start;
 	new_obj->prev = NULL;
@@ -29,8 +28,8 @@ void	ft_lst2_push_front(t_list2 **start, t_list2 **end,
 		*end = new_obj;
 	*start = new_obj;
 }
-void	ft_lst2_push_back(t_list2 **start, t_list2 **end,
-			t_list2 *new_obj)
+
+void	ft_lst2_push_back(t_list2 **start, t_list2 **end, t_list2 *new_obj)
 {
 	new_obj->next = NULL;
 	new_obj->prev = *end;

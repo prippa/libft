@@ -24,7 +24,7 @@ static int		gnl_sub_line(t_gnl *file, char **line)
 	start = (unsigned int)file->i;
 	while (file->s[file->i] && file->s[file->i] != '\n')
 		++file->i;
-	if (!(*line = ft_strsub(file->s, start,  file->i - start)))
+	if (!(*line = ft_strsub(file->s, start, file->i - start)))
 		return (-1);
 	if (file->s[file->i])
 		++file->i;
@@ -79,7 +79,7 @@ static t_gnl	*gnl_add_or_get_file(t_gnl **g, int fd)
 		file = file->next;
 	}
 	if (!(file = (t_gnl *)malloc(sizeof(t_gnl))))
-		return(NULL);
+		return (NULL);
 	file->s = NULL;
 	file->i = 0;
 	file->fd = fd;

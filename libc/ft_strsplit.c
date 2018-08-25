@@ -37,7 +37,7 @@ char			**ft_strsplit(char const *s, char c)
 
 	if (!s || !c
 		|| !(res = (char **)malloc(sizeof(char *) * (ft_get_size(s, c) + 1))))
-			return (NULL);
+		return (NULL);
 	i = -1;
 	while (*s)
 		if (*s != c)

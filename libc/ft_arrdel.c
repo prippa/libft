@@ -15,7 +15,7 @@
 void	ft_arrdel(char ***arr)
 {
 	char **tmp;
-	
+
 	if (arr && *arr)
 	{
 		tmp = *arr;
