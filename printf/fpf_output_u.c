@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_output_u_modul.c                                :+:      :+:    :+:   */
+/*   fpf_output_u.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,35 +12,35 @@
 
 #include "ft_printf.h"
 
-static void	ft_base_u_modul_logic(t_printf *fpf, int len)
+static void	fpf_base_u_logic(t_printf *fpf, int len)
 {
 	if (fpf->width)
 	{
-		if (fpf->flag[F_ZERO] && !fpf->precision)
-			ft_charjoin(fpf, fpf->width - len, '0');
+		if (fpf->f[F_ZERO] && !fpf->precision)
+			fpf_cat_char_len(fpf, fpf->width - len, '0');
 		else
-			ft_charjoin(fpf, fpf->width - MAX(len, fpf->precision), ' ');
+			fpf_cat_char_len(fpf, fpf->width - MAX(len, fpf->precision), ' ');
 	}
 	if (fpf->precision)
-		ft_charjoin(fpf, fpf->precision - len, '0');
-	ft_pf_strjoin(fpf, fpf->str, len);
+		fpf_cat_char_len(fpf, fpf->precision - len, '0');
+	fpf_cat_str_len(fpf, fpf->str, len);
 }
 
-void		ft_output_u_modul(t_printf *fpf)
+void		fpf_output_u(t_printf *fpf)
 {
 	int	len;
 
 	len = ft_strlen(fpf->str);
-	if (fpf->flag[F_DOT] && !fpf->precision && fpf->str[0] == '0')
+	if (fpf->f[F_DOT] && !fpf->precision && fpf->str[0] == '0')
 		len = 0;
-	if (fpf->flag[F_MINUS])
+	if (fpf->f[F_MINUS])
 	{
 		if (fpf->precision)
-			ft_charjoin(fpf, fpf->precision - len, '0');
-		ft_pf_strjoin(fpf, fpf->str, len);
+			fpf_cat_char_len(fpf, fpf->precision - len, '0');
+		fpf_cat_str_len(fpf, fpf->str, len);
 		if (fpf->width)
-			ft_charjoin(fpf, fpf->width - MAX(len, fpf->precision), ' ');
+			fpf_cat_char_len(fpf, fpf->width - MAX(len, fpf->precision), ' ');
 	}
 	else
-		ft_base_u_modul_logic(fpf, len);
+		fpf_base_u_logic(fpf, len);
 }

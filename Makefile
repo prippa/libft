@@ -45,34 +45,20 @@ C_LIBC		= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
 			ft_clear.c ft_arrnew.c ft_putarr.c ft_putarr_fd.c\
 			ft_memrev.c ft_strjoin_free.c\
 
-C_FPF		= 	ft_printf.c ft_dprintf.c\
-				ft_pf_strjoin.c ft_charjoin.c\
-				ft_unicode.c ft_conv_sig_int.c ft_conv_unsig_int.c\
-				ft_get_flags.c ft_get_type.c\
-				ft_get_oux.c ft_get_di.c ft_get_c.c ft_get_s.c\
-				ft_output_c_modul.c ft_output_s_modul.c ft_output_d_modul.c\
-				ft_output_u_modul.c ft_output_ox_modul.c\
-				ft_output_p_modul.c\
-				ft_fpf_color.c
+C_FPF		= 	ft_printf.c fpf_cat_data.c fpf_parser.c fpf_trash.c\
+				fpf_parser_get_type.c fpf_conversions.c fpf_unicode.c\
+				fpf_output_sc.c fpf_output_d.c fpf_output_u.c\
+				fpf_output_ox.c fpf_output_p.c fpf_colors.c
 
 
-
-OBJ_LIBC 	= 	$(C_LIBC:.c=.o)
-OBJ_FPF 	= 	$(C_FPF:.c=.o)
-
-OBJ 		= 	$(addprefix $(DIR_OBJ),$(OBJ_LIBC))
-OBJ 		+= 	$(addprefix $(DIR_OBJ),$(OBJ_FPF))
+OBJ 		= 	$(addprefix $(DIR_OBJ), $(C_LIBC:.c=.o) $(C_FPF:.c=.o))
 
 INC 		= 	$(addprefix -I,$(DIR_INC))
-INC_LIBC 	= 	$(addprefix $(DIR_INC),$(HEAD_LIBC))
-INC_FPF 	= 	$(addprefix $(DIR_INC),$(HEAD_FPF))
+INC_LIBC 	= 	$(addprefix $(DIR_INC), $(HEAD_LIBC))
+INC_FPF 	= 	$(addprefix $(DIR_INC), $(HEAD_FPF))
 
 
-
-all: obj $(NAME)
-
-obj:
-	@mkdir -p $(DIR_OBJ)
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
@@ -80,10 +66,12 @@ $(NAME): $(OBJ)
 	@echo "Compiling" [ $(NAME) ]
 
 $(DIR_OBJ)%.o: $(DIR_LIBC)%.c $(INC_LIBC)
+	@mkdir -p $(DIR_OBJ)
 	@$(CC) $(FLAGS) $(INC) -c -o $@ $<
 	@echo "Linking" [ $< ]
 
 $(DIR_OBJ)%.o: $(DIR_FPF)%.c $(INC_FPF)
+	@mkdir -p $(DIR_OBJ)
 	@$(CC) $(FLAGS) $(INC) -c -o $@ $<
 	@echo "Linking" [ $< ]
 
@@ -91,7 +79,9 @@ clean:
 	@rm -rf $(DIR_OBJ)
 	@echo "Clean [ obj files libft ]"
 
-fclean: clean
+fclean:
+	@rm -rf $(DIR_OBJ)
+	@echo "Clean [ obj files libft ]"
 	@rm -f $(NAME)
 	@echo "Clean" [ $(NAME) ]
 

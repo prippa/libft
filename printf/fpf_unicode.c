@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unicode.c                                       :+:      :+:    :+:   */
+/*   fpf_unicode.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/15 13:11:54 by prippa            #+#    #+#             */
-/*   Updated: 2018/01/15 13:11:57 by prippa           ###   ########.fr       */
+/*   Created: 2018/08/25 16:40:35 by prippa            #+#    #+#             */
+/*   Updated: 2018/08/25 16:40:36 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int		ft_wcharlen(wchar_t wc)
+static int		fpf_wcharlen(wchar_t wc)
 {
 	if (wc <= 0x7f)
 		return (1);
@@ -21,39 +21,35 @@ static int		ft_wcharlen(wchar_t wc)
 	return (3);
 }
 
-static size_t	ft_wstrlen(wchar_t *ws)
+static size_t	fpf_wstrlen(wchar_t *ws)
 {
 	size_t	len;
 
-	len = 0;
 	if (!ws)
 		return (0);
-	while (ws[len])
-		len++;
+	len = -1;
+	while (ws[++len])
+		;
 	return (len);
 }
 
-static size_t	ft_wbytelen(wchar_t *ws)
+static size_t	fpf_wbytelen(wchar_t *ws)
 {
 	size_t	byte_len;
 	size_t	len;
 
 	byte_len = 0;
-	len = ft_wstrlen(ws);
-	while (len)
-	{
-		byte_len += ft_wcharlen(*ws);
-		ws++;
-		len--;
-	}
+	len = fpf_wstrlen(ws);
+	while (len--)
+		byte_len += fpf_wcharlen(*ws++);
 	return (byte_len);
 }
 
-static int		ft_pull_wchar(wchar_t wc, char *new_obj, int i)
+static int		fpf_pull_wchar(wchar_t wc, char *new_obj, int i)
 {
 	int		size;
 
-	size = ft_wcharlen(wc);
+	size = fpf_wcharlen(wc);
 	if (size == 1)
 		new_obj[i++] = wc;
 	else if (size == 2)
@@ -77,21 +73,17 @@ static int		ft_pull_wchar(wchar_t wc, char *new_obj, int i)
 	return (i);
 }
 
-char			*ft_wstr_to_str(wchar_t *ws)
+char			*fpf_wstr_to_str(wchar_t *ws)
 {
 	char	*new_obj;
-	int		i;
 	int		len;
 
-	if (!ws)
-		return (NULL);
-	len = ft_wbytelen(ws);
+	len = fpf_wbytelen(ws);
 	if (!(new_obj = (char *)malloc(sizeof(char) * len + 1)))
-		return (NULL);
-	new_obj[len] = '\0';
+		fpf_malloc_error_exit();
+	new_obj[len] = 0;
 	len = 0;
-	i = 0;
-	while (ws[i])
-		len = ft_pull_wchar(ws[i++], new_obj, len);
+	while (*ws)
+		len = fpf_pull_wchar(*ws++, new_obj, len);
 	return (new_obj);
 }

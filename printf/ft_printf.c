@@ -5,118 +5,88 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/15 13:10:22 by prippa            #+#    #+#             */
-/*   Updated: 2018/01/15 13:10:24 by prippa           ###   ########.fr       */
+/*   Created: 2018/08/25 12:56:51 by prippa            #+#    #+#             */
+/*   Updated: 2018/08/25 12:56:52 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		ft_dispatcher(t_printf *fpf)
+static void	fpf_dispatcher(t_printf *fpf)
 {
-	if (fpf->flag[F_COLOR])
-		ft_fpf_color(fpf);
-	if (FC == 'c' || FC == 'C')
-		ft_output_c_modul(fpf);
-	else if (FC == 's' || FC == 'S')
-		ft_output_s_modul(fpf);
-	else if (FC == 'd' || FC == 'i' || FC == 'D')
-		ft_output_d_modul(fpf);
-	else if (FC == 'u' || FC == 'U')
-		ft_output_u_modul(fpf);
-	else if (FC == 'o' || FC == 'O' || FC == 'x' || FC == 'X')
-		ft_output_ox_modul(fpf);
-	else if (FC == 'p')
-		ft_output_p_modul(fpf);
+	if (fpf->f[F_COLOR])
+		fpf_set_color(fpf);
+	if (fpf->type == 's' || fpf->type == 'S')
+		fpf_output_s(fpf);
+	else if (fpf->type == 'd' || fpf->type == 'i' || fpf->type == 'D')
+		fpf_output_d(fpf);
+	else if (fpf->type == 'c' || fpf->type == 'C')
+		fpf_output_c(fpf);
+	else if (fpf->type == 'u' || fpf->type == 'U')
+		fpf_output_u(fpf);
+	else if (fpf->type == 'o' || fpf->type == 'O'
+		|| fpf->type == 'x' || fpf->type == 'X')
+		fpf_output_ox(fpf);
 	else
-		ft_pf_strjoin(fpf, fpf->str, ft_strlen(fpf->str));
-	if (fpf->flag[F_COLOR])
-		ft_pf_strjoin(fpf, COLOR_RESET, ft_strlen(COLOR_RESET));
+		fpf_output_p(fpf);
+	if (fpf->f[F_COLOR])
+		fpf_cat_str(fpf, COLOR_RESET);
 }
 
-void		ft_initialization(t_printf *fpf)
+static void	fpf_handle_type(t_printf *fpf)
 {
-	ft_bzero(fpf->flag, FPF_FLAG_SIZE);
+	fpf->size_flag = 0;
 	fpf->width = 0;
 	fpf->precision = 0;
-	fpf->size_flag = 0;
-	fpf->type = '\0';
+	fpf->color = 0;
+	fpf->type = 0;
 	fpf->str = NULL;
-	ft_get_flags(fpf);
-	ft_get_type(fpf);
+	ft_bzero(fpf->f, FLAG_SIZE);
+	fpf_parser(fpf);
+	if (fpf->str)
+	{
+		fpf_dispatcher(fpf);
+		free(fpf->str);
+	}
 }
 
-void		ft_base_output(t_printf *fpf)
+static void	fpf_lobi(t_printf *fpf)
 {
-	int		len;
-	int		i;
-	char	*str;
-
-	i = fpf->i;
-	len = 0;
-	while (fpf->format[i] && fpf->format[i] != '%')
+	while (*fpf->format)
 	{
-		len++;
-		i++;
-	}
-	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
-		return ;
-	str[len] = '\0';
-	i = 0;
-	while (i < len)
-	{
-		str[i] = PC;
-		i++;
-		fpf->i++;
-	}
-	ft_pf_strjoin(fpf, str, len);
-	free(str);
-	fpf->i--;
-}
-
-void		ft_lobi(t_printf *fpf)
-{
-	while (PC)
-	{
-		if (PC == '%')
-		{
-			fpf->i++;
-			if (!PC)
-				continue;
-			ft_initialization(fpf);
-			if (fpf->type && fpf->str)
-			{
-				ft_dispatcher(fpf);
-				free(fpf->str);
-			}
-			else
-				fpf->i--;
-		}
+		if (*fpf->format == '%')
+			fpf_handle_type(fpf);
 		else
-			ft_base_output(fpf);
-		fpf->i++;
+			fpf_cat_char(fpf, *fpf->format++);
 	}
+	if (fpf->buflen)
+		fpf->len += write(fpf->fd, fpf->buf, fpf->buflen);
 }
 
 int			ft_printf(const char *format, ...)
 {
-	t_printf	fpf;
-	int			len;
+	t_printf fpf;
 
+	fpf.format = format;
 	fpf.fd = 1;
-	fpf.format = ft_strdup(format);
-	fpf.out_str = NULL;
-	fpf.i = 0;
-	fpf.size = 0;
+	fpf.buflen = 0;
+	fpf.len = 0;
 	va_start(fpf.args, format);
-	ft_lobi(&fpf);
+	fpf_lobi(&fpf);
 	va_end(fpf.args);
-	free(fpf.format);
-	len = 0;
-	if (fpf.out_str)
-	{
-		len = write(fpf.fd, fpf.out_str, ft_strlen(fpf.out_str));
-		free(fpf.out_str);
-	}
-	return (len + fpf.size);
+	return (fpf.len);
+}
+
+int			ft_dprintf(int fd, const char *format, ...)
+{
+	t_printf fpf;
+
+	fpf.format = format;
+	fpf.fd = fd;
+	fpf.buflen = 0;
+	fpf.len = 0;
+	va_start(fpf.args, format);
+	fpf_lobi(&fpf);
+	va_end(fpf.args);
+	return (fpf.len);
 }
