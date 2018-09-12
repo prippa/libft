@@ -12,17 +12,16 @@
 
 #include "libft.h"
 
-char	*ft_strjoin_free(char **dst, const char *src,
+char	*ft_memjoin_free(void **dst, const void *src,
 			size_t dstsize, size_t srcsize)
 {
-	char *tmp;
+	void			*tmp;
 
 	tmp = *dst;
-	if (!(*dst = (char *)malloc(sizeof(char) * (dstsize + srcsize + 1))))
+	if (!(*dst = (char *)malloc(sizeof(char) * (dstsize + srcsize))))
 		return (NULL);
-	ft_strcpy(*dst, tmp);
-	ft_strncpy(&(*dst)[dstsize], src, srcsize);
-	(*dst)[dstsize + srcsize] = 0;
+	ft_memcpy(*dst, tmp, dstsize);
+	ft_memcpy(&(*dst)[dstsize], src, srcsize);
 	free(tmp);
 	return (*dst);
 }

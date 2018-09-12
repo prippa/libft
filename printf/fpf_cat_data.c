@@ -35,7 +35,9 @@ void	fpf_cat_str_len(t_printf *fpf, const char *src, int n)
 {
 	if (n > FPF_BUF_SIZE)
 	{
+		fpf->len += write(fpf->fd, fpf->buf, fpf->buflen);
 		fpf->len += write(fpf->fd, src, n);
+		fpf->buflen = 0;
 		return ;
 	}
 	else if ((fpf->buflen + n) > FPF_BUF_SIZE)
@@ -54,7 +56,9 @@ void	fpf_cat_str(t_printf *fpf, const char *src)
 	srclen = ft_strlen(src);
 	if (srclen > FPF_BUF_SIZE)
 	{
+		fpf->len += write(fpf->fd, fpf->buf, fpf->buflen);
 		fpf->len += write(fpf->fd, src, srclen);
+		fpf->buflen = 0;
 		return ;
 	}
 	else if ((fpf->buflen + srclen) > FPF_BUF_SIZE)

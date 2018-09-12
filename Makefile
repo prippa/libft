@@ -14,7 +14,7 @@ NAME		=	libft.a
 
 FLAGS		= 	-Wall -Werror -Wextra
 
-CC			=	gcc
+CC			=	gcc -g
 
 DIR_INC		=	./includes/
 DIR_LIBC	=	./libc/
@@ -40,15 +40,14 @@ C_LIBC		= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
 			ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c\
 			ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c\
 			ft_strtrim.c ft_tolower.c ft_str_to_lower.c ft_str_to_upper.c\
-			ft_toupper.c get_next_line.c\
-			ft_arrdel.c ft_arrlen.c ft_nbrlen.c\
+			ft_toupper.c get_next_line.c ft_arrdel.c ft_arrlen.c ft_nbrlen.c\
 			ft_clear.c ft_arrnew.c ft_putarr.c ft_putarr_fd.c\
-			ft_memrev.c ft_strjoin_free.c\
+			ft_memrev.c ft_strjoin_free.c ft_memjoin_free.c ft_perror_exit.c\
 
 C_FPF		= 	ft_printf.c fpf_cat_data.c fpf_parser.c fpf_trash.c\
 				fpf_parser_get_type.c fpf_conversions.c fpf_unicode.c\
 				fpf_output_sc.c fpf_output_d.c fpf_output_u.c\
-				fpf_output_ox.c fpf_output_p.c fpf_colors.c
+				fpf_output_ox.c fpf_output_p.c fpf_colors.c fpf_bonus_flags.c
 
 
 OBJ 		= 	$(addprefix $(DIR_OBJ), $(C_LIBC:.c=.o) $(C_FPF:.c=.o))

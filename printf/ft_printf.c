@@ -14,8 +14,7 @@
 
 static void	fpf_dispatcher(t_printf *fpf)
 {
-	if (fpf->f[F_COLOR])
-		fpf_set_color(fpf);
+	fpf_before_processing_data(fpf);
 	if (fpf->type == 's' || fpf->type == 'S')
 		fpf_output_s(fpf);
 	else if (fpf->type == 'd' || fpf->type == 'i' || fpf->type == 'D')
@@ -29,8 +28,7 @@ static void	fpf_dispatcher(t_printf *fpf)
 		fpf_output_ox(fpf);
 	else
 		fpf_output_p(fpf);
-	if (fpf->f[F_COLOR])
-		fpf_cat_str(fpf, COLOR_RESET);
+	fpf_after_processing_data(fpf);
 }
 
 static void	fpf_handle_type(t_printf *fpf)

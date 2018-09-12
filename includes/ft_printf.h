@@ -38,6 +38,7 @@ typedef enum			e_fpf_flags
 	F_ZERO,
 	F_DOT,
 	F_COLOR,
+	F_UPERCASE,
 	FLAG_SIZE
 }						t_fpf_flags;
 
@@ -137,5 +138,7 @@ void					fpf_output_p(t_printf *fpf);
 void					fpf_output_s(t_printf *fpf);
 void					fpf_output_u(t_printf *fpf);
 void					fpf_set_color(t_printf *fpf);
+void					fpf_before_processing_data(t_printf *fpf);
+void					fpf_after_processing_data(t_printf *fpf);
 
 #endif

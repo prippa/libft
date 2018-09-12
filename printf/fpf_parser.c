@@ -94,6 +94,8 @@ static void	fpf_get_flags(t_printf *fpf)
 			fpf->color = (int)va_arg(fpf->args, int);
 			fpf->f[F_COLOR] = c;
 		}
+		else if (*fpf->format == '^')
+			fpf->f[F_UPERCASE] = c;
 		else
 			break ;
 }

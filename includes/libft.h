@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include "ft_printf.h"
 
 # define BUFF_SIZE 80
 # define ABS(x) (((x) < 0) ? -(x) : (x))
@@ -143,5 +144,8 @@ void				ft_clear(void);
 void				*ft_memrev(void *dst, size_t n);
 char				*ft_strjoin_free(char **dst, const char *src,
 						size_t dstsize, size_t srcsize);
+char				*ft_memjoin_free(void **dst, const void *src,
+						size_t dstsize, size_t srcsize);
+void				ft_perror_exit(const char *message);
 
 #endif
