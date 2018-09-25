@@ -13,14 +13,33 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/*
+************************************ Includes **********************************
+*/
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include "ft_printf.h"
 
+/*
+************************************ Defines ***********************************
+*/
+
+# define ABS(x)		(((x) < 0) ? -(x) : (x))
+# define MAX(a, b)	((a) > (b) ? (a) : (b))
+# define MIN(a, b)	((a) < (b) ? (a) : (b))
+
+# define MALLOC_ERR		"malloc failed"
+# define OPEN_ERR		"open failed"
+# define READ_ERR		"read failed"
+# define OTHER_ERR		"some error hapend"
+
 # define BUFF_SIZE 80
-# define ABS(x) (((x) < 0) ? -(x) : (x))
-# define MAX(a, b) (a > b ? a : b)
+
+/*
+************************************ Data **************************************
+*/
 
 typedef	struct		s_gnl
 {
@@ -44,6 +63,10 @@ typedef	struct		s_list2
 	struct s_list2	*next;
 	struct s_list2	*prev;
 }					t_list2;
+
+/*
+******************************* Functions **************************************
+*/
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -101,11 +124,12 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new_obj);
+void				ft_lstdelone(t_list **lst, void (*del)(void *, size_t));
+void				ft_lstdel(t_list **lst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **lst, t_list *new_obj);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_lstpop(t_list **lst, void (*del)(void *, size_t));
 
 t_list2				*ft_lst2new(void const *content, size_t content_size);
 void				ft_lst2delone(t_list2 **obj, void (*del)(void *, size_t));
@@ -147,5 +171,6 @@ char				*ft_strjoin_free(char **dst, const char *src,
 char				*ft_memjoin_free(void **dst, const void *src,
 						size_t dstsize, size_t srcsize);
 void				ft_perror_exit(const char *message);
+int					ft_base(const char c);
 
 #endif
