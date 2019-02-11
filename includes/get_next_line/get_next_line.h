@@ -6,14 +6,14 @@
 /*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 12:20:28 by prippa            #+#    #+#             */
-/*   Updated: 2019/02/11 12:20:30 by prippa           ###   ########.fr       */
+/*   Updated: 2019/02/11 13:08:28 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE	1
+# define BUFF_SIZE	80
 
 # include <stdint.h>
 # include <stdlib.h>
