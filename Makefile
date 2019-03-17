@@ -154,7 +154,8 @@ FPF_C		:=	$(DIR_FPF_SRC)ft_printf.c\
 				$(DIR_FPF_SRC)fpf_output_ox.c\
 				$(DIR_FPF_SRC)fpf_output_p.c\
 				$(DIR_FPF_SRC)fpf_colors.c\
-				$(DIR_FPF_SRC)fpf_bonus_flags.c
+				$(DIR_FPF_SRC)fpf_bonus_flags.c\
+				$(DIR_FPF_SRC)fpf_lobi.c
 
 #-------------------------- Init OBJ INC ---------------------------------------
 OBJ			:=	$(patsubst $(DIR_LIB_SRC)%,$(DIR_OBJ)%,\

@@ -50,7 +50,7 @@ static void	fpf_get_precision(t_printf *fpf)
 		++fpf->format;
 		if (*fpf->format == '*')
 		{
-			fpf->precision = (int)va_arg(fpf->args, int);
+			fpf->precision = (int32_t)va_arg(fpf->args, int32_t);
 			++fpf->format;
 		}
 		else
@@ -63,7 +63,7 @@ static void	fpf_get_width(t_printf *fpf)
 {
 	if (*fpf->format == '*')
 	{
-		if ((fpf->width = (int)va_arg(fpf->args, int)) < 0)
+		if ((fpf->width = (int32_t)va_arg(fpf->args, int32_t)) < 0)
 		{
 			fpf->f[F_MINUS] = 1;
 			fpf->width = ABS(fpf->width);
@@ -93,7 +93,8 @@ static void	fpf_get_flags(t_printf *fpf)
 			fpf->f[F_ZERO] = c;
 		else if (*fpf->format == '~')
 		{
-			fpf->color = (int)va_arg(fpf->args, int);
+			fpf->color_type = (int32_t)va_arg(fpf->args, int32_t);
+			fpf->color = (int32_t)va_arg(fpf->args, int32_t);
 			fpf->f[F_COLOR] = c;
 		}
 		else if (*fpf->format == '^')

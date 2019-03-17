@@ -52,6 +52,7 @@ typedef struct	s_printf
 	int32_t		buflen;
 	char		f[FLAG_SIZE];
 	int32_t		color;
+	int32_t		color_type;
 	int32_t		width;
 	int32_t		precision;
 	int32_t		size_flag;
@@ -61,6 +62,11 @@ typedef struct	s_printf
 
 int				ft_printf(const char *format, ...);
 int				ft_dprintf(int fd, const char *format, ...);
+char			*ft_sprintf(const char *format, ...);
+
+# define MSG(f, a ...) ft_sprintf(f, a)
+
+void			fpf_lobi(t_printf *fpf);
 void			fpf_cat_char(t_printf *fpf, char c);
 void			fpf_cat_str(t_printf *fpf, const char *src);
 void			fpf_cat_char_len(t_printf *fpf, int32_t n, char c);

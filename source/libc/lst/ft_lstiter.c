@@ -20,12 +20,3 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 		lst = lst->next;
 	}
 }
-
-void	ft_lst2iter(t_list2 *start, void (*f)(t_list2 *elem))
-{
-	while (start)
-	{
-		f(start);
-		start = start->next;
-	}
-}
