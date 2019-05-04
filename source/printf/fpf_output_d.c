@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fpf_output_d.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 13:08:50 by prippa            #+#    #+#             */
 /*   Updated: 2018/01/15 13:08:53 by prippa           ###   ########.fr       */

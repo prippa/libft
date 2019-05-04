@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_is_str_print.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:38:55 by prippa            #+#    #+#             */
-/*   Updated: 2017/11/08 13:39:04 by prippa           ###   ########.fr       */
+/*   Created: 2019/03/18 17:03:54 by prippa            #+#    #+#             */
+/*   Updated: 2019/03/18 17:05:16 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_is.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int32_t	ft_is_str_print(const char *str)
 {
-	t_list *l;
-	t_list *new_obj;
-
-	new_obj = f(lst);
-	l = new_obj;
-	while (lst->next)
-	{
-		l->next = f(lst->next);
-		l = l->next;
-		lst = lst->next;
-	}
-	return (new_obj);
+	while (*str)
+		if (!ft_isprint(*str++))
+			return (0);
+	return (1);
 }

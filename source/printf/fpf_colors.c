@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fpf_color.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 18:58:54 by prippa            #+#    #+#             */
 /*   Updated: 2018/03/12 21:52:51 by prippa           ###   ########.fr       */

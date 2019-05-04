@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_str_space.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 12:35:52 by prippa            #+#    #+#             */
 /*   Updated: 2019/02/11 12:35:53 by prippa           ###   ########.fr       */

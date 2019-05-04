@@ -11,13 +11,12 @@
 /* ************************************************************************** */
 
 #include "ft_str.h"
+#include "ft_mem.h"
 
 char	*ft_strdup(const char *s1)
 {
 	char		*new_obj;
 
-	if (!(new_obj = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
-		return (NULL);
-	ft_strcpy(new_obj, s1);
-	return (new_obj);
+	new_obj = (char *)ft_memalloc(sizeof(char) * (ft_strlen(s1) + 1));
+	return (ft_strcpy(new_obj, s1));
 }

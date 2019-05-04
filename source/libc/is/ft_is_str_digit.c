@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isstrdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 14:14:55 by prippa            #+#    #+#             */
 /*   Updated: 2017/11/09 14:22:05 by prippa           ###   ########.fr       */

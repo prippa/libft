@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isstralpha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 14:23:47 by prippa            #+#    #+#             */
 /*   Updated: 2017/11/09 14:28:40 by prippa           ###   ########.fr       */

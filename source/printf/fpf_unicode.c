@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fpf_unicode.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 16:40:35 by prippa            #+#    #+#             */
 /*   Updated: 2018/08/25 16:40:36 by prippa           ###   ########.fr       */
@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdlib.h>
+#include "ft_other.h"
+#include "ft_def.h"
+#include "ft_mem.h"
 
 static int32_t	fpf_wcharlen(wchar_t wc)
 {
@@ -80,9 +82,7 @@ char			*fpf_wstr_to_str(wchar_t *ws)
 	int32_t	len;
 
 	len = fpf_wbytelen(ws);
-	if (!(new_obj = (char *)malloc(sizeof(char) * (len + 1))))
-		fpf_malloc_error_exit();
-	new_obj[len] = 0;
+	new_obj = (char *)ft_memalloc(sizeof(char) * (len + 1));
 	len = 0;
 	while (*ws)
 		len = fpf_pull_wchar(*ws++, new_obj, len);

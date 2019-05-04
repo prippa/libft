@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 13:58:49 by prippa            #+#    #+#             */
 /*   Updated: 2018/05/26 13:58:50 by prippa           ###   ########.fr       */

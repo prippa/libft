@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fpf_conversions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 16:41:21 by prippa            #+#    #+#             */
 /*   Updated: 2018/08/25 16:41:23 by prippa           ###   ########.fr       */

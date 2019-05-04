@@ -3,55 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 13:37:46 by prippa            #+#    #+#             */
 /*   Updated: 2017/11/08 13:40:38 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_list.h"
+#include "ft_mem.h"
 
-void	ft_lstdel(t_list **lst, void (*del)(void *, size_t))
+void	ft_lstdel_one(t_list_elem **elem, t_delptr del)
 {
-	while (*lst)
-		ft_lstpop(lst, del);
+	if (!*elem)
+		return ;
+	if (del)
+		del((*elem)->content, (*elem)->content_size);
+	ft_memdel((void **)elem);
+	*elem = NULL;
 }
 
-void	ft_lst2del(t_list2 **start, t_list2 **end, void (*del)(void *, size_t))
+void	ft_lstdel(t_list *lst)
 {
-	while (*start)
-		ft_lst2_pop_front(start, end, del);
+	while (lst->start)
+		ft_lstpop_front(lst);
 }
 
-void	ft_lst2del_by_obj(t_list2 **start, t_list2 **end,
-			t_list2 *obj, void (*del)(void *, size_t))
+void	ft_lstdel_by_obj(t_list *lst, t_list_elem *obj)
 {
 	if (!obj)
 		return ;
 	if (!obj->prev)
 	{
-		*start = (*start)->next;
-		if (*start)
-			(*start)->prev = NULL;
+		lst->start = lst->start->next;
+		if (lst->start)
+			lst->start->prev = NULL;
 		else
-			*end = NULL;
+			lst->end = NULL;
 	}
 	else if (!obj->next)
 	{
 		obj->prev->next = NULL;
-		*end = obj->prev;
+		lst->end = obj->prev;
 	}
 	else
 	{
 		obj->prev->next = obj->next;
 		obj->next->prev = obj->prev;
 	}
-	ft_lstdelone((t_list **)(&obj), del);
-}
-
-void	ft_lstdel_content(void *content, size_t content_size)
-{
-	(void)content_size;
-	free(content);
+	ft_lstdel_one(&obj, lst->del);
+	--lst->list_size;
 }

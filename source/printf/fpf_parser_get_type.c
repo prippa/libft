@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fpf_parser_get_type.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 16:40:15 by prippa            #+#    #+#             */
 /*   Updated: 2018/08/25 16:40:17 by prippa           ###   ########.fr       */
@@ -12,7 +12,9 @@
 
 #include "ft_printf.h"
 #include "ft_other.h"
+#include "ft_def.h"
 #include "ft_str.h"
+#include "ft_mem.h"
 
 static char	*ft_get_oux(t_printf *fpf)
 {
@@ -81,10 +83,8 @@ char		*ft_get_c(t_printf *fpf)
 	}
 	else
 	{
-		if (!(str = (char *)malloc(sizeof(char) * 2)))
-			return (NULL);
+		str = (char *)ft_memalloc(sizeof(char) * 2);
 		str[0] = (char)va_arg(fpf->args, int);
-		str[1] = 0;
 	}
 	return (str);
 }
@@ -110,8 +110,6 @@ void		fpf_get_type(t_printf *fpf)
 	}
 	else
 		return ;
-	if (!fpf->str)
-		fpf_malloc_error_exit();
 	fpf->type = *fpf->format;
 	++fpf->format;
 }

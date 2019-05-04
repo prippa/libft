@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_htinsert.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/02 17:00:09 by prippa            #+#    #+#             */
-/*   Updated: 2019/03/02 17:00:13 by prippa           ###   ########.fr       */
+/*   Created: 2019/04/05 13:55:42 by prippa            #+#    #+#             */
+/*   Updated: 2019/04/05 13:55:43 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_hash_table.h"
 
-size_t	ft_lstsize(t_list *start)
+void		ft_htinsert(t_hash_table *ht, const t_ht_elem *elem)
 {
-	size_t size;
+	ft_ht_insert_logic(ht, elem, false);
+}
 
-	size = 0;
-	while (start)
-	{
-		++size;
-		start = start->next;
-	}
-	return (size);
+void		ft_htinsert_ref(t_hash_table *ht, const t_ht_elem *elem)
+{
+	ft_ht_insert_logic(ht, elem, true);
 }

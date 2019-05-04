@@ -3,34 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstpop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 12:33:35 by prippa            #+#    #+#             */
 /*   Updated: 2018/10/04 12:33:38 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_list.h"
 
-void	ft_lstpop(t_list **lst, void (*del)(void *, size_t))
+void	ft_lstpop_front(t_list *lst)
 {
-	t_list *tmp;
+	t_list_elem *tmp;
 
-	if (!*lst)
+	if (!lst->start)
 		return ;
-	tmp = *lst;
-	*lst = (*lst)->next;
-	ft_lstdelone(&tmp, del);
+	tmp = lst->start;
+	lst->start = lst->start->next;
+	if (lst->start)
+		lst->start->prev = NULL;
+	else
+		lst->end = NULL;
+	ft_lstdel_one(&tmp, lst->del);
+	--lst->list_size;
 }
 
-void	ft_lst2_pop_front(t_list2 **start, t_list2 **end,
-			void (*del)(void *, size_t))
+void	ft_lstpop_back(t_list *lst)
 {
-	ft_lst2del_by_obj(start, end, *start, del);
-}
+	t_list_elem *tmp;
 
-void	ft_lst2_pop_back(t_list2 **start, t_list2 **end,
-			void (*del)(void *, size_t))
-{
-	ft_lst2del_by_obj(start, end, *end, del);
+	if (!lst->end)
+		return ;
+	tmp = lst->end;
+	lst->end = lst->end->prev;
+	if (lst->end)
+		lst->end->prev = NULL;
+	else
+		lst->end = NULL;
+	ft_lstdel_one(&tmp, lst->del);
+	--lst->list_size;
 }

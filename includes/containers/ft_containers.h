@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_containers.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:38:38 by prippa            #+#    #+#             */
-/*   Updated: 2017/11/08 13:38:40 by prippa           ###   ########.fr       */
+/*   Created: 2019/04/05 12:29:59 by prippa            #+#    #+#             */
+/*   Updated: 2019/04/05 12:30:01 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#ifndef FT_CONTAINERS_H
+# define FT_CONTAINERS_H
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
-{
-	while (lst)
-	{
-		f(lst);
-		lst = lst->next;
-	}
-}
+# include "ft_list.h"
+# include "ft_hash_table.h"
+
+#endif

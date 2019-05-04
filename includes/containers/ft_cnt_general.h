@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_cnt_general.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:37:19 by prippa            #+#    #+#             */
-/*   Updated: 2017/11/08 13:37:26 by prippa           ###   ########.fr       */
+/*   Created: 2019/04/19 17:58:01 by prippa            #+#    #+#             */
+/*   Updated: 2019/04/19 17:58:02 by prippa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#ifndef FT_CNT_GENERAL_H
+# define FT_CNT_GENERAL_H
 
-void	ft_lstdelone(t_list **lst, void (*del)(void *, size_t))
-{
-	if (!*lst)
-		return ;
-	if (del)
-		del((*lst)->content, (*lst)->content_size);
-	free(*lst);
-	*lst = NULL;
-}
+# include <stddef.h>
+
+typedef void	(*t_delptr)(void *ptr, size_t ptr_size);
+
+void	ft_cnt_delptr(void *ptr, size_t ptr_size);
+
+#endif

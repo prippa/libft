@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fpf_parser.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 15:26:54 by prippa            #+#    #+#             */
 /*   Updated: 2018/08/25 15:26:56 by prippa           ###   ########.fr       */

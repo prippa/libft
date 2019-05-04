@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/31 17:58:36 by prippa            #+#    #+#             */
 /*   Updated: 2017/11/20 18:01:57 by prippa           ###   ########.fr       */
@@ -33,7 +33,7 @@ int32_t		ft_atoi(const char *str)
 	return (sign ? -res : res);
 }
 
-intmax_t	ft_atoi_max(char *str)
+intmax_t	ft_atoi_max(const char *str)
 {
 	t_bool		sign;
 	intmax_t	res;

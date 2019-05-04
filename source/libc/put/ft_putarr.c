@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putarr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/06 12:25:12 by prippa            #+#    #+#             */
 /*   Updated: 2018/02/06 12:25:15 by prippa           ###   ########.fr       */

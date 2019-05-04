@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fpf_cat_data.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 14:12:28 by prippa            #+#    #+#             */
 /*   Updated: 2018/08/25 14:12:29 by prippa           ###   ########.fr       */

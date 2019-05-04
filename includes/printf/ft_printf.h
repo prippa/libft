@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 12:56:11 by prippa            #+#    #+#             */
 /*   Updated: 2018/08/25 12:56:13 by prippa           ###   ########.fr       */
@@ -17,7 +17,7 @@
 # include <wchar.h>
 # include <stdint.h>
 
-# define FPF_BUF_SIZE 1024
+# define FPF_BUF_SIZE 10024
 
 typedef enum	e_fpf_size_flags
 {
@@ -74,7 +74,6 @@ void			fpf_cat_str_len(t_printf *fpf, const char *src, int32_t n);
 void			fpf_parser(t_printf *fpf);
 intmax_t		fpf_conv_sig_int(t_printf *fpf);
 uintmax_t		fpf_conv_unsig_int(t_printf *fpf);
-void			fpf_malloc_error_exit(void);
 void			fpf_get_type(t_printf *fpf);
 char			*fpf_wstr_to_str(wchar_t *ws);
 void			fpf_init_random_char(t_printf *fpf);

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_islowercase.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 15:13:02 by prippa            #+#    #+#             */
 /*   Updated: 2017/11/09 15:13:44 by prippa           ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 12:22:30 by prippa            #+#    #+#             */
 /*   Updated: 2019/02/11 12:22:31 by prippa           ###   ########.fr       */
@@ -48,5 +48,7 @@ char		*ft_strnjoin(char const *s1, char const *s2,
 				size_t s1len, size_t s2len);
 char		*ft_strjoin_free(char **dst, const char *src,
 				size_t dstsize, size_t srcsize);
+char		*ft_strinsert_free(char **dst, const char *src, size_t len);
+char		*ft_strcut_free(char **dst, size_t start, size_t len);
 
 #endif

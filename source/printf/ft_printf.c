@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 12:56:51 by prippa            #+#    #+#             */
 /*   Updated: 2018/08/25 12:56:52 by prippa           ###   ########.fr       */
@@ -63,8 +63,6 @@ char		*ft_sprintf(const char *format, ...)
 		s = ft_strsub(fpf.buf, 0, fpf.buflen);
 	else
 		s = ft_strdup(EMPTY_STR);
-	if (!s)
-		ft_perror_exit(MALLOC_ERR);
 	va_end(fpf.args);
 	return (s);
 }

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_str_empty.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 12:35:38 by prippa            #+#    #+#             */
 /*   Updated: 2019/02/11 12:35:40 by prippa           ###   ########.fr       */

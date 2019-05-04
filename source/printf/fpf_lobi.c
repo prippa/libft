@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fpf_lobi.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 12:47:32 by prippa            #+#    #+#             */
 /*   Updated: 2019/03/12 12:47:35 by prippa           ###   ########.fr       */
@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 #include "ft_mem.h"
+#include "ft_str.h"
 #include <unistd.h>
 
 static void	fpf_dispatcher(t_printf *fpf)
@@ -47,7 +48,7 @@ static void	fpf_handle_type(t_printf *fpf)
 	if (fpf->str)
 	{
 		fpf_dispatcher(fpf);
-		free(fpf->str);
+		ft_strdel(&fpf->str);
 	}
 }
 

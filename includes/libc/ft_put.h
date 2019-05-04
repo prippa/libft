@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 12:22:21 by prippa            #+#    #+#             */
 /*   Updated: 2019/02/11 12:22:22 by prippa           ###   ########.fr       */

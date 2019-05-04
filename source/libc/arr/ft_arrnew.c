@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arrnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 15:44:21 by prippa            #+#    #+#             */
 /*   Updated: 2018/02/26 15:44:26 by prippa           ###   ########.fr       */
@@ -14,19 +14,15 @@
 
 char	**ft_arrnew(size_t y, size_t x, int32_t c)
 {
-	char **arr;
-	char ch;
+	char	**arr;
+	size_t	x_len;
 
-	ch = 0;
-	if (!(arr = (char **)malloc(sizeof(char *) * (y + 1))))
-		return (NULL);
-	arr[y] = NULL;
+	arr = (char **)ft_memalloc(sizeof(char *) * (y + 1));
+	x_len = (sizeof(char) * (x + 1));
 	while (y--)
 	{
-		if (!(arr[y] = (char *)malloc(sizeof(char) * (x + 1))))
-			return (NULL);
-		ft_memset(arr[y], c, x);
-		arr[y][x] = ch;
+		arr[y] = (char *)ft_memalloc(x_len);
+		ft_memset(arr[y], c, x_len - 1);
 	}
 	return (arr);
 }

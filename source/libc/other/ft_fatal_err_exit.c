@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fatal_err_exit.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 13:30:06 by prippa            #+#    #+#             */
 /*   Updated: 2019/02/23 13:33:38 by prippa           ###   ########.fr       */

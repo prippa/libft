@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tostrlowercase.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 15:24:42 by prippa            #+#    #+#             */
 /*   Updated: 2017/11/09 15:25:26 by prippa           ###   ########.fr       */

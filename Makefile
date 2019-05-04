@@ -13,23 +13,29 @@ CH_OBJ		:=	o
 LIB			:=	libc/
 GNL			:=	get_next_line/
 FPF			:=	printf/
+CNT			:=	containers/
 
 DIR_LIB_INC	:=	$(DIR_INC)$(LIB)
 DIR_GNL_INC	:=	$(DIR_INC)$(GNL)
 DIR_FPF_INC	:=	$(DIR_INC)$(FPF)
+DIR_CNT_INC	:=	$(DIR_INC)$(CNT)
 
 DIR_LIB_SRC	:=	$(DIR_SRC)$(LIB)
 DIR_GNL_SRC	:=	$(DIR_SRC)$(GNL)
 DIR_FPF_SRC	:=	$(DIR_SRC)$(FPF)
+DIR_CNT_SRC	:=	$(DIR_SRC)$(CNT)
 
 DIR_MEM		:=	$(DIR_LIB_SRC)mem/
 DIR_STR		:=	$(DIR_LIB_SRC)str/
 DIR_IS		:=	$(DIR_LIB_SRC)is/
 DIR_TO		:=	$(DIR_LIB_SRC)to/
 DIR_PUT		:=	$(DIR_LIB_SRC)put/
-DIR_LST		:=	$(DIR_LIB_SRC)lst/
 DIR_ARR		:=	$(DIR_LIB_SRC)arr/
 DIR_OTHER	:=	$(DIR_LIB_SRC)other/
+DIR_SYS		:=	$(DIR_LIB_SRC)sys/
+
+DIR_LST		:=	$(DIR_CNT_SRC)list/
+DIR_HASH	:=	$(DIR_CNT_SRC)hash_table/
 
 #-------------------------- Header files ---------------------------------------
 LIB_H		:=	$(DIR_LIB_INC)libft.h\
@@ -39,9 +45,14 @@ LIB_H		:=	$(DIR_LIB_INC)libft.h\
 				$(DIR_LIB_INC)ft_is.h\
 				$(DIR_LIB_INC)ft_to.h\
 				$(DIR_LIB_INC)ft_put.h\
-				$(DIR_LIB_INC)ft_lst.h\
 				$(DIR_LIB_INC)ft_arr.h\
-				$(DIR_LIB_INC)ft_other.h
+				$(DIR_LIB_INC)ft_other.h\
+				$(DIR_LIB_INC)ft_sys.h
+
+CNT_H		:=	$(DIR_CNT_INC)ft_containers.h\
+				$(DIR_CNT_INC)ft_list.h\
+				$(DIR_CNT_INC)ft_hash_table.h\
+				$(DIR_CNT_INC)ft_cnt_general.h
 
 GNL_H		:=	$(DIR_GNL_INC)get_next_line.h
 
@@ -90,6 +101,8 @@ LIB_C		:=	$(DIR_MEM)ft_bzero.c\
 				$(DIR_STR)ft_strsub.c\
 				$(DIR_STR)ft_strsub_free.c\
 				$(DIR_STR)ft_strtrim.c\
+				$(DIR_STR)ft_strinsert_free.c\
+				$(DIR_STR)ft_strcut_free.c\
 				$(DIR_IS)ft_isalnum.c\
 				$(DIR_IS)ft_isalpha.c\
 				$(DIR_IS)ft_isascii.c\
@@ -106,6 +119,7 @@ LIB_C		:=	$(DIR_MEM)ft_bzero.c\
 				$(DIR_IS)ft_isupper.c\
 				$(DIR_IS)ft_isalpha_in_case.c\
 				$(DIR_IS)ft_isalnum_in_case.c\
+				$(DIR_IS)ft_is_str_print.c\
 				$(DIR_TO)ft_tolower.c\
 				$(DIR_TO)ft_to_str_lower.c\
 				$(DIR_TO)ft_to_str_upper.c\
@@ -120,15 +134,6 @@ LIB_C		:=	$(DIR_MEM)ft_bzero.c\
 				$(DIR_PUT)ft_putstr_fd.c\
 				$(DIR_PUT)ft_putarr.c\
 				$(DIR_PUT)ft_putarr_fd.c\
-				$(DIR_LST)ft_lstadd.c\
-				$(DIR_LST)ft_lstdel.c\
-				$(DIR_LST)ft_lstdelone.c\
-				$(DIR_LST)ft_lstiter.c\
-				$(DIR_LST)ft_lstmap.c\
-				$(DIR_LST)ft_lstnew.c\
-				$(DIR_LST)ft_lstpop.c\
-				$(DIR_LST)ft_lstrev.c\
-				$(DIR_LST)ft_lstsize.c\
 				$(DIR_ARR)ft_arrdel.c\
 				$(DIR_ARR)ft_arrlen.c\
 				$(DIR_ARR)ft_arrnew.c\
@@ -137,7 +142,31 @@ LIB_C		:=	$(DIR_MEM)ft_bzero.c\
 				$(DIR_OTHER)ft_nbrlen.c\
 				$(DIR_OTHER)ft_clear.c\
 				$(DIR_OTHER)ft_perror_exit.c\
-				$(DIR_OTHER)ft_fatal_err_exit.c
+				$(DIR_OTHER)ft_fatal_err_exit.c\
+				$(DIR_OTHER)ft_get_left_word.c\
+				$(DIR_OTHER)ft_get_right_word.c\
+				$(DIR_SYS)ft_sys_readdir.c
+
+CNT_C		:=	$(DIR_CNT_SRC)ft_delptr.c\
+				$(DIR_LST)ft_lstinit.c\
+				$(DIR_LST)ft_lstpush.c\
+				$(DIR_LST)ft_lstdel.c\
+				$(DIR_LST)ft_lstiter.c\
+				$(DIR_LST)ft_lstmap.c\
+				$(DIR_LST)ft_lstnew.c\
+				$(DIR_LST)ft_lstpop.c\
+				$(DIR_LST)ft_lstrev.c\
+				$(DIR_LST)ft_lstsort.c\
+				$(DIR_HASH)ft_ht_hash.c\
+				$(DIR_HASH)ft_ht_insert_logic.c\
+				$(DIR_HASH)ft_ht_change_arr_size.c\
+				$(DIR_HASH)ft_htinit.c\
+				$(DIR_HASH)ft_htinsert.c\
+				$(DIR_HASH)ft_htiter.c\
+				$(DIR_HASH)ft_htdel.c\
+				$(DIR_HASH)ft_htclear.c\
+				$(DIR_HASH)ft_htget.c\
+				$(DIR_HASH)ft_htremove.c
 
 GNL_C		:=	$(DIR_GNL_SRC)get_next_line.c
 
@@ -160,13 +189,16 @@ FPF_C		:=	$(DIR_FPF_SRC)ft_printf.c\
 #-------------------------- Init OBJ INC ---------------------------------------
 OBJ			:=	$(patsubst $(DIR_LIB_SRC)%,$(DIR_OBJ)%,\
 				$(LIB_C:.$(CH_SRC)=.$(CH_OBJ)))
+OBJ			+=	$(patsubst $(DIR_CNT_SRC)%,$(DIR_OBJ)%,\
+				$(CNT_C:.$(CH_SRC)=.$(CH_OBJ)))
 OBJ			+=	$(patsubst $(DIR_GNL_SRC)%,$(DIR_OBJ)%,\
 				$(GNL_C:.$(CH_SRC)=.$(CH_OBJ)))
 OBJ			+=	$(patsubst $(DIR_FPF_SRC)%,$(DIR_OBJ)%,\
 				$(FPF_C:.$(CH_SRC)=.$(CH_OBJ)))
 
 
-INC			:=	$(addprefix -I, $(DIR_LIB_INC) $(DIR_GNL_INC) $(DIR_FPF_INC))
+INC			:=	$(addprefix -I, $(DIR_LIB_INC) $(DIR_GNL_INC) $(DIR_FPF_INC)\
+				$(DIR_CNT_INC))
 
 #-------------------------- Make -----------------------------------------------
 all: $(DIR_OBJ) $(NAME)
@@ -184,6 +216,13 @@ $(NAME): $(OBJ)
 #LIB
 $(DIR_OBJ)%.$(CH_OBJ): $(DIR_LIB_SRC)%.$(CH_SRC)\
 $(LIB_H)
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) $(INC) -c -o $@ $<
+	@echo "Compiling" [ $< ]
+
+#CNT
+$(DIR_OBJ)%.$(CH_OBJ): $(DIR_CNT_SRC)%.$(CH_SRC)\
+$(LIB_H) $(CNT_H)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INC) -c -o $@ $<
 	@echo "Compiling" [ $< ]

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prippa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prippa <prippa@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 13:59:31 by prippa            #+#    #+#             */
 /*   Updated: 2017/11/06 13:59:40 by prippa           ###   ########.fr       */
@@ -13,17 +13,15 @@
 #include "ft_def.h"
 #include "ft_other.h"
 #include "ft_str.h"
+#include "ft_mem.h"
 
 char	*ft_itoa(int32_t n)
 {
 	char		*new_obj;
 	uint16_t	size;
 
-	size = ft_nbrlen(n);
-	size += (n < 0 ? 1 : 0);
-	if (!(new_obj = (char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	new_obj[size] = 0;
+	size = ft_nbrlen(n) + (n < 0 ? 1 : 0);
+	new_obj = (char *)ft_memalloc(sizeof(char) * (size + 1));
 	new_obj[0] = (n < 0 ? '-' : '0');
 	while (n)
 	{
@@ -38,11 +36,8 @@ char	*ft_itoa_max(intmax_t n)
 	char		*new_obj;
 	uint16_t	size;
 
-	size = ft_nbrlen(n);
-	size += (n < 0 ? 1 : 0);
-	if (!(new_obj = (char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	new_obj[size] = 0;
+	size = ft_nbrlen(n) + (n < 0 ? 1 : 0);
+	new_obj = (char *)ft_memalloc(sizeof(char) * (size + 1));
 	new_obj[0] = (n < 0 ? '-' : '0');
 	while (n)
 	{
