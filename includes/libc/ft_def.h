@@ -31,7 +31,7 @@
 # define EMPTY_STR		""
 # define ENDL			'\n'
 
-typedef char	t_bool;
+typedef int8_t	t_bool;
 enum			{ false, true };
 
 typedef struct	s_point
