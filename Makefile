@@ -210,7 +210,7 @@ $(DIR_OBJ):
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@echo "Linking" [ $(NAME) ]
+	@echo "Compiling" [ $(NAME) ]
 
 #-------------------------- Compil Block ---------------------------------------
 #LIB
@@ -218,28 +218,28 @@ $(DIR_OBJ)%.$(CH_OBJ): $(DIR_LIB_SRC)%.$(CH_SRC)\
 $(LIB_H)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INC) -c -o $@ $<
-	@echo "Compiling" [ $< ]
+	@echo "Linking" [ $< ]
 
 #CNT
 $(DIR_OBJ)%.$(CH_OBJ): $(DIR_CNT_SRC)%.$(CH_SRC)\
 $(LIB_H) $(CNT_H)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INC) -c -o $@ $<
-	@echo "Compiling" [ $< ]
+	@echo "Linking" [ $< ]
 
 #GNL
 $(DIR_OBJ)%.$(CH_OBJ): $(DIR_GNL_SRC)%.$(CH_SRC)\
 $(LIB_H) $(GNL_H)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INC) -c -o $@ $<
-	@echo "Compiling" [ $< ]
+	@echo "Linking" [ $< ]
 
 #FPF
 $(DIR_OBJ)%.$(CH_OBJ): $(DIR_FPF_SRC)%.$(CH_SRC)\
 $(LIB_H) $(FPF_H)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INC) -c -o $@ $<
-	@echo "Compiling" [ $< ]
+	@echo "Linking" [ $< ]
 
 #-------------------------- Clean ----------------------------------------------
 clean:
