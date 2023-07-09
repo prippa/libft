@@ -54,7 +54,7 @@ char	*ft_itoa_base(uintmax_t num, int32_t base, int32_t letter)
 	uintmax_t	op;
 	char		buf[65];
 
-	if (base < 2 && base > 16)
+	if (base < 2 || base > 16)
 		return (NULL);
 	buf[64] = 0;
 	if (num == 0)
