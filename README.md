@@ -18,31 +18,31 @@ In this project i implemented many functions from standard libraries like: **str
 ***
 
 ## bzero
-![](https://thumbs.gfycat.com/UnluckyAmbitiousCockerspaniel-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/UnluckyAmbitiousCockerspaniel-size_restricted.png)
 
 ## strlen
-![](https://thumbs.gfycat.com/DentalSillyGalah-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/DentalSillyGalah-size_restricted.png)
 
 ## strcpy
-![](https://thumbs.gfycat.com/ThunderousSkeletalClumber-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/ThunderousSkeletalClumber-size_restricted.png)
 
 ## strcat
-![](https://thumbs.gfycat.com/NearAdvancedArgentineruddyduck-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/NearAdvancedArgentineruddyduck-size_restricted.png)
 
 ## strcmp
-![](https://thumbs.gfycat.com/OrangeResponsibleHawaiianmonkseal-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/OrangeResponsibleHawaiianmonkseal-size_restricted.png)
 
 ## strdup
-![](https://thumbs.gfycat.com/LeftHeavenlyHorseshoebat-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/LeftHeavenlyHorseshoebat-size_restricted.png)
 
 ## atoi
-![](https://thumbs.gfycat.com/SlimThatAntlion-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/SlimThatAntlion-size_restricted.png)
 
 ## printf
 #### main test
-![](https://thumbs.gfycat.com/DeafeningDisfiguredKakapo-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/DeafeningDisfiguredKakapo-size_restricted.png)
 #### output result
-![](https://thumbs.gfycat.com/FirsthandHelpfulKob-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/FirsthandHelpfulKob-size_restricted.png)
 
 ## getline
 **get_next_line** in general works same as standard function **getline**
@@ -52,8 +52,8 @@ In this project i implemented many functions from standard libraries like: **str
 The return value can be **1**, **0** or **-1** depending on whether a line has been read,
 when the reading has been completed, or if an error has happened respectively.
 #### main test
-![](https://thumbs.gfycat.com/AdoredBleakButterfly-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/AdoredBleakButterfly-size_restricted.png)
 #### output result
-![](https://thumbs.gfycat.com/ImmaterialAngryBrahmanbull-size_restricted.gif)
+![](https://github.com/prippa/my-projects-media/blob/main/libft/GNL_output.png)
 
 [more info](https://github.com/prippa/libft/blob/master/libft.en.pdf)
